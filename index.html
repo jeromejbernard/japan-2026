@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
 <title>Japan — December 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
   --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 html { overflow-x: hidden; }
-body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
 /* SNOW */
 .snow-wrap { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
@@ -36,47 +36,49 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); font
 @keyframes fall { 0% { transform: translateY(0) rotate(0deg) translateX(0); opacity: 1; } 33% { transform: translateY(220px) rotate(120deg) translateX(12px); } 66% { transform: translateY(440px) rotate(240deg) translateX(-8px); } 100% { transform: translateY(660px) rotate(360deg) translateX(5px); opacity: 0; } }
 
 /* HERO */
-.hero { position: relative; min-height: 520px; display: flex; flex-direction: column; justify-content: flex-end; padding: 60px 5%; overflow: hidden; background: linear-gradient(165deg, #06101C 0%, #0B1A2E 40%, #0A1220 100%); border-bottom: 1px solid var(--border); }
+.hero { position: relative; min-height: 520px; display: flex; flex-direction: column; justify-content: flex-end; padding: 60px 5%; overflow: hidden; background: radial-gradient(ellipse at 72% 22%, rgba(90,15,20,0.22) 0%, transparent 55%), linear-gradient(180deg, #04060D 0%, #07091A 50%, #060810 100%); border-bottom: 1px solid var(--border); }
 .hero-grid { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.02) 60px), repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.02) 60px); }
-.hero-badge { display: inline-block; font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,148,37,0.35); padding: 6px 14px; border-radius: 30px; margin-bottom: 20px; }
+.hero-badge { display: inline-block; font-family: var(--sans); font-size: 15px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,148,37,0.35); padding: 6px 14px; border-radius: 30px; margin-bottom: 20px; }
 .hero h1 { font-family: var(--serif); font-size: clamp(72px, 12vw, 130px); font-weight: 700; line-height: 0.9; color: var(--text); letter-spacing: -2px; margin-bottom: 8px; }
 .hero h1 span { color: var(--cr); }
 .hero-dates { font-family: var(--serif); font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--text-2); margin-bottom: 20px; }
 .hero-names { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-.hero-name { font-size: 15px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2); padding: 5px 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-2); border-radius: 20px; }
+.hero-name { font-size: 17px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2); padding: 5px 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-2); border-radius: 20px; }
 .hero-name.you { color: var(--gold); border-color: rgba(200,148,37,0.3); background: rgba(200,148,37,0.06); }
-.hero-tagline { margin-top: 28px; font-size: 17px; color: var(--text-2); max-width: 560px; line-height: 1.7; padding-top: 20px; border-top: 1px solid var(--border); }
+.hero-tagline { margin-top: 28px; font-size: 18px; color: var(--text-2); max-width: 560px; line-height: 1.7; padding-top: 20px; border-top: 1px solid var(--border); }
 
 /* STATS BAR */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-bottom: 1px solid var(--border); }
 .stat { background: var(--bg-2); padding: 22px 28px; }
 .stat-num { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--text); }
-.stat-lbl { font-size: 14px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); margin-top: 4px; }
+.stat-lbl { font-size: 16px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); margin-top: 4px; }
 
 /* SECTION LAYOUT */
-.section { padding: 56px 5%; border-bottom: 1px solid var(--border); max-width: 960px; margin: 0 auto; }
-.section-title { font-family: var(--serif); font-size: 13px; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-3); margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+.section { padding: 56px 5%; border-bottom: 1px solid var(--border); max-width: 1200px; margin: 0 auto; }
+.section-title { font-family: var(--serif); font-size: 15px; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-3); margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
 .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
 /* FLIGHTS */
 .flights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.flight-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--r); padding: 24px; }
+.flight-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--r); padding: 20px; }
 .flight-card.booked { border-color: rgba(200,148,37,0.25); }
 .flight-card.urgent { border-color: rgba(190,27,51,0.35); }
 .fc-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
-.fc-tag { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
+.fc-tag { font-size: 15px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
 .tag-booked { background: rgba(200,148,37,0.15); color: var(--am-l); }
 .tag-urgent { background: rgba(190,27,51,0.15); color: var(--cr-l); }
-.fc-names { font-size: 15px; color: var(--text-2); font-weight: 500; }
+.fc-names { font-size: 17px; color: var(--text-2); font-weight: 500; }
 .flight-leg { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.fc-direction { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); padding: 14px 0 4px; border-top: 1px solid var(--border); margin-top: 8px; }
+.fc-direction:first-of-type { border-top: none; padding-top: 4px; margin-top: 0; }
 .flight-leg:last-child { border-bottom: none; }
-.fl-time { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); min-width: 70px; }
+.fl-time { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); min-width: 58px; }
 .fl-arrow { font-size: 18px; color: var(--text-3); flex: 1; text-align: center; }
-.fl-meta { font-size: 14px; color: var(--text-2); line-height: 1.4; }
-.fl-airport { font-weight: 600; color: var(--text); font-size: 15px; }
-.fl-detail { font-size: 13px; color: var(--text-3); margin-top: 2px; }
+.fl-meta { font-size: 16px; color: var(--text-2); line-height: 1.4; }
+.fl-airport { font-weight: 600; color: var(--text); font-size: 17px; }
+.fl-detail { font-size: 15px; color: var(--text-3); margin-top: 2px; }
 .flight-total { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-.urgent-note { margin-top: 14px; background: var(--cr-bg); border: 1px solid rgba(190,27,51,0.25); border-radius: var(--r-sm); padding: 12px 14px; font-size: 15px; color: #F08090; line-height: 1.5; }
+.urgent-note { margin-top: 14px; background: var(--cr-bg); border: 1px solid rgba(190,27,51,0.25); border-radius: var(--r-sm); padding: 12px 14px; font-size: 17px; color: #F08090; line-height: 1.5; }
 
 /* PHASE BLOCKS */
 .phase { border-radius: var(--r); border: 1px solid var(--border); overflow: hidden; margin-bottom: 20px; }
@@ -85,24 +87,24 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); font
 .phase-icon { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
 .phase-meta { }
 .phase-title { font-family: var(--serif); font-size: 26px; font-weight: 700; line-height: 1; }
-.phase-sub { font-size: 14px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 5px; }
+.phase-sub { font-size: 16px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 5px; }
 .phase-dates { text-align: right; }
-.phase-nights { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
-.phase-date-str { font-size: 15px; color: var(--text-2); margin-top: 4px; }
+.phase-nights { font-size: 15px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
+.phase-date-str { font-size: 17px; color: var(--text-2); margin-top: 4px; }
 .phase-chevron { transition: transform 0.3s; color: var(--text-3); font-size: 20px; }
 .phase-header.open .phase-chevron { transform: rotate(180deg); }
 .phase-body { padding: 0 28px 28px; display: none; }
 .phase-body.open { display: block; padding-top: 20px; }
-.phase-accom { display: flex; align-items: flex-start; gap: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 14px 16px; margin-bottom: 20px; font-size: 15px; }
+.phase-accom { display: flex; align-items: flex-start; gap: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 14px 16px; margin-bottom: 20px; font-size: 17px; }
 .phase-accom strong { color: var(--text); font-weight: 600; }
 .phase-accom span { color: var(--text-2); }
 .day-block { margin-bottom: 16px; }
 .day-header { display: flex; align-items: baseline; gap: 14px; padding: 12px 0 8px; border-top: 1px solid var(--border); }
-.day-num { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); min-width: 52px; }
-.day-date { font-size: 13px; color: var(--text-3); }
+.day-num { font-size: 15px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); min-width: 52px; }
+.day-date { font-size: 15px; color: var(--text-3); }
 .day-title { font-family: var(--serif); font-size: 18px; font-style: italic; color: var(--text); flex: 1; }
 .day-items { list-style: none; padding-left: 66px; }
-.day-items li { font-size: 16px; color: var(--text-2); padding: 3px 0; line-height: 1.5; position: relative; }
+.day-items li { font-size: 18px; color: var(--text-2); padding: 5px 0; line-height: 1.75; position: relative; }
 .day-items li::before { content: '—'; position: absolute; left: -20px; color: var(--text-3); }
 
 /* Phase colours */
@@ -130,25 +132,25 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); font
 /* HAKUBA FEATURE */
 .feature-box { background: var(--ic-bg); border: 1px solid rgba(24,85,160,0.3); border-radius: var(--r); padding: 36px 40px; margin-bottom: 20px; }
 .feature-box h3 { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--ic-l); margin-bottom: 6px; }
-.feature-box p { font-size: 17px; color: var(--text-2); line-height: 1.7; margin-bottom: 20px; }
+.feature-box p { font-size: 18px; color: var(--text-2); line-height: 1.7; margin-bottom: 20px; }
 .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
 .ski-stat { background: rgba(0,0,0,0.25); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 18px; text-align: center; }
 .ski-stat-num { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ic-l); }
-.ski-stat-lbl { font-size: 14px; color: var(--text-2); margin-top: 4px; }
+.ski-stat-lbl { font-size: 16px; color: var(--text-2); margin-top: 4px; }
 .highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
 .hl { display: flex; gap: 12px; align-items: flex-start; }
 .hl-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ic-l); flex-shrink: 0; margin-top: 6px; }
-.hl p { font-size: 15px; color: var(--text-2); }
+.hl p { font-size: 17px; color: var(--text-2); }
 .hl strong { color: var(--text); font-weight: 600; }
 
 /* COST TABLE */
 .cost-table { width: 100%; border-collapse: collapse; }
-.cost-table th { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); padding: 10px 16px; text-align: left; background: var(--bg-3); border-bottom: 1px solid var(--border); }
-.cost-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 16px; vertical-align: top; }
+.cost-table th { font-size: 15px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); padding: 10px 16px; text-align: left; background: var(--bg-3); border-bottom: 1px solid var(--border); }
+.cost-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 18px; vertical-align: top; }
 .cost-table tr:hover td { background: rgba(255,255,255,0.02); }
 .cost-table .item-icon { font-size: 18px; width: 36px; }
 .cost-table .item-name { color: var(--text); font-weight: 500; }
-.cost-table .item-note { font-size: 14px; color: var(--text-2); margin-top: 3px; }
+.cost-table .item-note { font-size: 16px; color: var(--text-2); margin-top: 3px; }
 .cost-table .item-amt { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--text); white-space: nowrap; }
 .cost-total td { background: rgba(200,148,37,0.08); border-top: 2px solid rgba(200,148,37,0.3); border-bottom: none; }
 .cost-total .item-name { font-family: var(--serif); font-size: 18px; color: var(--gold); }
@@ -159,7 +161,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); font
 .insurance-box { background: rgba(200,148,37,0.06); border: 1px solid rgba(200,148,37,0.25); border-radius: var(--r); padding: 24px 28px; display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: flex-start; }
 .ins-icon { font-size: 32px; }
 .ins-title { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--am-l); margin-bottom: 8px; }
-.ins-body { font-size: 16px; color: var(--text-2); line-height: 1.7; }
+.ins-body { font-size: 18px; color: var(--text-2); line-height: 1.7; }
 .ins-body strong { color: var(--text); }
 
 /* BOOK NOW */
@@ -167,15 +169,15 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); font
 .book-section h2 { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
 .book-section h2 span { color: var(--cr-l); font-style: italic; }
 .book-section p { font-size: 18px; color: var(--text-2); max-width: 520px; margin: 0 auto 32px; }
-.book-btn { display: inline-block; padding: 16px 48px; background: var(--cr); color: white; font-size: 16px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 40px; touch-action: manipulation; -webkit-tap-highlight-color: transparent; transition: background 0.2s, transform 0.1s; }
-.hero-name { font-size: 15px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2); padding: 5px 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-2); border-radius: 20px; margin: 4px 0; }
-.book-ref { margin-top: 24px; font-size: 15px; color: var(--text-3); }
+.book-btn { display: inline-block; padding: 16px 48px; background: var(--cr); color: white; font-size: 18px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 40px; touch-action: manipulation; -webkit-tap-highlight-color: transparent; transition: background 0.2s, transform 0.1s; }
+.hero-name { font-size: 17px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2); padding: 5px 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-2); border-radius: 20px; margin: 4px 0; }
+.book-ref { margin-top: 24px; font-size: 17px; color: var(--text-3); }
 .book-ref strong { color: var(--text-2); }
 
 .book-btn:hover { background: var(--cr-l); transform: translateY(-1px); }
 
 /* FOOTER */
-footer { text-align: center; padding: 32px; font-size: 14px; color: var(--text-3); border-top: 1px solid var(--border); }
+footer { text-align: center; padding: 32px; font-size: 16px; color: var(--text-3); border-top: 1px solid var(--border); }
 
 /* RESPONSIVE — 700px */
 @media (max-width: 700px) {
@@ -184,33 +186,63 @@ footer { text-align: center; padding: 32px; font-size: 14px; color: var(--text-3
   .stats-row { grid-template-columns: 1fr; }
   .highlights-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 72px; }
-  .section { padding: 40px 20px; }
+  .section { padding: 48px 24px; }
+  .phase-header { min-height: 72px; }
+}
+
+/* FLIGHT CARD — stack legs vertically on mobile */
+@media (max-width: 700px) {
+  .flight-leg { flex-direction: column; align-items: flex-start; gap: 6px; padding: 16px 0; }
+  .fl-arrow { display: none; }
+  .fl-dest { text-align: left !important; }
+  .fl-time { font-size: 22px; min-width: auto; }
+  .fl-airport { font-size: 17px; }
+  .fl-detail { font-size: 15px; }
+  .flight-card { padding: 20px; }
 }
 
 /* RESPONSIVE — 480px (small phones, FB in-app browser) */
 @media (max-width: 480px) {
   .hero { padding: 40px 16px; min-height: 400px; }
-  .hero-tagline { font-size: 16px; }
-  .phase-header { padding: 14px 16px; gap: 10px; }
-  .phase-icon { width: 40px; height: 40px; font-size: 18px; }
-  .phase-title { font-size: 20px; }
-  .phase-sub { font-size: 12px; letter-spacing: 0.08em; }
+  .hero-tagline { font-size: 17px; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat { padding: 18px 14px; }
+  .stat-num { font-size: 28px; }
+  .stat-lbl { font-size: 15px; }
+  .phase-header { padding: 16px; gap: 12px; min-height: 72px; }
+  .phase-icon { width: 44px; height: 44px; font-size: 20px; }
+  .phase-title { font-size: 22px; }
+  .phase-sub { font-size: 13px; letter-spacing: 0.06em; }
   .phase-date-str { display: none; }
-  .phase-body { padding: 0 16px 20px; }
-  .phase-body.open { padding-top: 14px; }
-  .day-items { padding-left: 36px; }
+  .phase-body { padding: 0 16px 24px; }
+  .phase-body.open { padding-top: 18px; }
+  .day-items { padding-left: 28px; }
+  .day-items li { font-size: 17px; }
+  .day-title { font-size: 19px; }
   .cost-table .item-icon { display: none; }
   .cost-table th:first-child { display: none; }
-  .cost-table .item-amt { font-size: 18px; }
-  .cost-total .item-amt { font-size: 20px; }
+  .cost-table td { padding: 12px; font-size: 17px; }
+  .cost-table .item-note { font-size: 15px; }
+  .cost-table .item-amt { font-size: 20px; }
+  .cost-total .item-amt { font-size: 24px; }
   .feature-box { padding: 20px; }
-  .insurance-box { grid-template-columns: 1fr; gap: 10px; }
+  .insurance-box { grid-template-columns: 1fr; gap: 12px; }
   .ins-icon { display: none; }
+  .ins-title { font-size: 19px; }
+  .ins-body { font-size: 17px; }
   .book-section { padding: 40px 16px; }
-  .book-section h2 { font-size: 32px; }
-  .book-btn { padding: 14px 28px; font-size: 15px; }
-  .stat { padding: 16px; }
-  .stat-num { font-size: 26px; }
+  .book-section h2 { font-size: 34px; }
+  .book-section p { font-size: 17px; }
+  .book-btn { padding: 16px 32px; font-size: 17px; }
+}
+
+/* RESPONSIVE — 380px (very small phones) */
+@media (max-width: 380px) {
+  .stats { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 60px; }
+  .section { padding: 36px 16px; }
+  .phase-header { padding: 14px; }
+  .phase-body { padding: 0 14px 20px; }
 }
 </style>
 </head>
@@ -220,21 +252,74 @@ footer { text-align: center; padding: 32px; font-size: 14px; color: var(--text-3
 <header class="hero">
   <div class="hero-grid"></div>
   <div class="snow-wrap" id="snow"></div>
-  <svg style="position:absolute;bottom:0;left:0;width:100%;pointer-events:none;z-index:1" viewBox="0 0 1440 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Layer 1: Farthest mountains, hazy blue-grey -->
-    <path d="M0,260 L0,185 C30,178 55,165 80,155 C105,145 125,138 155,128 C180,120 205,118 230,125 C255,132 270,122 295,112 C318,103 340,95 365,88 C390,81 410,86 435,95 C455,103 470,98 492,90 C515,82 535,75 558,70 C580,65 600,68 622,75 C642,81 660,78 682,70 C705,62 725,56 748,52 C770,48 790,53 812,60 C832,67 850,63 872,56 C895,49 918,44 940,48 C962,52 980,58 1002,64 C1022,70 1040,66 1062,58 C1085,50 1108,44 1130,48 C1152,52 1168,60 1190,68 C1210,75 1230,72 1252,65 C1275,58 1298,55 1320,60 C1342,65 1362,72 1390,80 C1410,86 1428,90 1440,94 L1440,260 Z" fill="rgba(45,75,120,0.28)"/>
-    <!-- Snow caps layer 1 -->
-    <path d="M365,88 C372,82 378,76 385,80 C390,83 395,88 400,90 M558,70 C566,63 573,57 580,61 C586,65 591,70 597,73 M748,52 C757,44 765,38 773,43 C780,48 786,53 792,57 M940,48 C949,41 957,35 965,40 C972,45 978,50 984,54 M1130,48 C1139,41 1147,35 1155,39 C1162,44 1168,49 1174,53" fill="rgba(210,228,255,0.22)" stroke="none"/>
-    <!-- Layer 2: Mid-distant peaks, more defined -->
-    <path d="M0,260 L0,200 C25,193 48,182 72,170 C95,159 115,152 140,142 C162,133 182,128 205,135 C225,141 240,132 262,120 C283,109 302,100 325,92 C347,84 366,88 388,98 C407,107 422,102 445,92 C468,82 488,74 512,68 C535,62 555,66 577,74 C597,81 614,77 636,68 C658,59 678,52 702,48 C724,44 744,50 766,58 C786,65 804,60 826,52 C848,44 870,38 892,43 C915,48 933,56 955,62 C975,68 993,63 1016,54 C1038,46 1060,40 1082,45 C1104,50 1120,59 1142,67 C1162,74 1180,70 1202,62 C1224,54 1246,49 1268,54 C1290,59 1308,67 1330,74 C1352,81 1372,78 1400,85 C1418,90 1432,93 1440,96 L1440,260 Z" fill="rgba(25,52,92,0.52)"/>
-    <!-- Snow caps layer 2 -->
-    <path d="M325,92 C335,83 344,75 353,81 C360,86 366,93 372,97 M512,68 C523,59 532,51 541,57 C548,62 554,68 560,73 M702,48 C714,38 724,30 733,36 C741,42 747,49 753,54 M892,43 C904,33 914,25 923,31 C931,37 937,44 943,49 M1082,45 C1094,35 1104,27 1113,33 C1121,39 1127,46 1133,51 M1268,54 C1278,45 1287,37 1296,43 C1303,48 1309,55 1315,60" fill="rgba(225,238,255,0.3)" stroke="none"/>
-    <!-- Layer 3: Closer mountains, darker and more dramatic -->
-    <path d="M0,260 L0,215 C20,208 40,198 65,186 C88,175 108,168 132,158 C155,148 175,142 198,150 C218,157 232,148 255,136 C277,125 297,116 320,108 C342,100 362,105 384,115 C403,124 418,118 440,108 C463,97 483,88 506,82 C530,76 550,80 572,88 C592,96 610,91 632,82 C655,73 676,65 700,61 C723,57 743,63 766,72 C787,80 805,75 828,66 C851,57 873,50 896,55 C919,60 938,68 961,75 C982,82 1001,77 1024,68 C1047,59 1069,52 1092,57 C1115,62 1133,71 1156,79 C1177,87 1196,83 1219,74 C1242,65 1264,59 1287,64 C1310,69 1329,78 1352,86 C1374,93 1395,90 1420,95 C1430,97 1436,99 1440,100 L1440,260 Z" fill="rgba(12,28,58,0.80)"/>
-    <!-- Snow caps layer 3 - most prominent -->
-    <path d="M320,108 L332,95 L340,88 L348,95 L358,107 Z M506,82 L519,68 L528,60 L537,68 L549,80 Z M700,61 L714,46 L724,38 L734,46 L748,59 Z M896,55 L910,40 L920,32 L930,40 L944,53 Z M1092,57 L1106,42 L1116,34 L1126,42 L1140,55 Z M1287,64 L1300,50 L1309,42 L1319,50 L1332,62 Z" fill="rgba(235,245,255,0.42)"/>
-    <!-- Tree line - foreground silhouette -->
-    <path d="M0,260 L0,238 L12,232 L18,238 L26,228 L32,238 L40,224 L46,238 L55,220 L60,238 L68,226 L74,235 L82,222 L88,235 L96,228 L104,238 L112,224 L118,238 L126,220 L132,238 L140,230 L148,238 L156,226 L162,238 L170,222 L176,235 L184,228 L192,238 L200,225 L208,238 L216,230 L224,238 L232,224 L238,235 L246,228 L254,238 L262,222 L268,238 L276,230 L284,235 L292,225 L298,238 L306,228 L314,232 L322,238 L330,225 L338,235 L346,228 L354,238 L362,222 L368,235 L376,228 L384,238 L392,230 L400,235 L408,228 L416,238 L424,225 L430,235 L438,228 L446,238 L454,222 L460,235 L468,230 L476,238 L484,228 L492,232 L500,238 L508,224 L514,238 L522,228 L530,232 L538,238 L546,225 L552,235 L560,228 L568,238 L576,222 L582,235 L590,228 L598,238 L606,230 L614,235 L622,225 L628,238 L636,228 L644,232 L652,238 L660,222 L666,235 L674,228 L682,238 L690,224 L696,238 L704,228 L712,232 L720,238 L728,225 L734,235 L742,228 L750,238 L758,222 L764,235 L772,228 L780,238 L788,230 L796,235 L804,225 L810,238 L818,228 L826,232 L834,238 L842,222 L848,235 L856,228 L864,238 L872,224 L878,238 L886,228 L894,232 L902,238 L910,225 L916,235 L924,228 L932,238 L940,222 L946,235 L954,228 L962,238 L970,230 L978,235 L986,225 L992,238 L1000,228 L1008,232 L1016,238 L1024,222 L1030,235 L1038,228 L1046,238 L1054,224 L1060,238 L1068,228 L1076,232 L1084,238 L1092,225 L1098,235 L1106,228 L1114,238 L1122,222 L1128,235 L1136,228 L1144,238 L1152,230 L1160,235 L1168,225 L1174,238 L1182,228 L1190,232 L1198,238 L1206,222 L1212,235 L1220,228 L1228,238 L1236,224 L1242,238 L1250,228 L1258,232 L1266,238 L1274,225 L1280,235 L1288,228 L1296,238 L1304,222 L1310,235 L1318,228 L1326,238 L1334,230 L1342,235 L1350,225 L1356,238 L1364,228 L1372,232 L1380,238 L1388,222 L1394,235 L1402,228 L1410,238 L1418,230 L1426,235 L1434,228 L1440,232 L1440,260 Z" fill="rgba(4,10,22,0.97)"/>
+  <svg style="position:absolute;bottom:0;left:0;width:100%;pointer-events:none;z-index:1" viewBox="0 0 1440 520" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="moonAtm" cx="75%" cy="18%" r="28%">
+        <stop offset="0%" stop-color="rgba(235,215,185,0.16)"/>
+        <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+      </radialGradient>
+      <linearGradient id="textProtect" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="rgba(4,6,13,0)"/>
+        <stop offset="30%" stop-color="rgba(4,6,13,0.10)"/>
+        <stop offset="60%" stop-color="rgba(4,6,13,0.62)"/>
+        <stop offset="100%" stop-color="rgba(4,6,13,0.96)"/>
+      </linearGradient>
+      <linearGradient id="fujiGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="rgba(16,26,52,0.95)"/>
+        <stop offset="100%" stop-color="rgba(7,12,24,0.98)"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Moon atmosphere glow -->
+    <rect x="0" y="0" width="1440" height="520" fill="url(#moonAtm)"/>
+
+    <!-- Moon disc — subtle, upper right -->
+    <circle cx="1078" cy="100" r="62" fill="rgba(238,222,192,0.05)"/>
+    <circle cx="1078" cy="100" r="46" fill="rgba(238,222,192,0.06)"/>
+    <circle cx="1078" cy="100" r="32" fill="rgba(238,222,192,0.08)"/>
+
+    <!-- Distant mountain haze -->
+    <path d="M0,520 L0,340 C100,325 200,310 300,298 C380,288 460,282 540,278 C620,274 700,273 720,273 C740,273 820,274 900,278 C980,282 1060,288 1140,298 C1240,310 1340,325 1440,340 L1440,520 Z" fill="rgba(18,32,65,0.22)"/>
+
+    <!-- Mount Fuji — iconic silhouette, centered -->
+    <path d="M160,520 C200,515 260,502 330,485 C390,470 440,450 498,418 C542,394 578,365 612,330 C638,304 658,276 678,244 C694,216 706,184 714,150 C717,128 719,110 720,92 C721,110 723,128 726,150 C734,184 746,216 762,244 C782,276 802,304 828,330 C862,365 898,394 942,418 C1000,450 1050,470 1110,485 C1180,502 1240,515 1280,520 Z" fill="url(#fujiGrad)"/>
+
+    <!-- Fuji snow cap — outer -->
+    <path d="M686,202 C696,177 706,150 714,122 C716,110 718,100 720,92 C722,100 724,110 726,122 C734,150 744,177 754,202 C746,210 738,216 730,220 C724,223 720,224 716,223 C710,222 702,216 686,202 Z" fill="rgba(215,230,255,0.60)"/>
+    <!-- Fuji snow cap — bright inner highlight -->
+    <path d="M704,188 C710,168 715,145 719,118 C720,106 720,99 720,92 C720,99 720,106 721,118 C725,145 730,168 736,188 C730,194 726,198 720,199 C714,198 710,194 704,188 Z" fill="rgba(238,246,255,0.50)"/>
+
+    <!-- Cherry blossom tree — LEFT -->
+    <path d="M115,520 C116,492 117,468 118,444 C118,428 119,412 120,396" stroke="rgba(8,6,4,0.95)" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <path d="M119,425 C110,417 97,407 78,396" stroke="rgba(8,6,4,0.90)" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M120,408 C130,400 144,392 162,385" stroke="rgba(8,6,4,0.90)" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M120,396 C120,382 120,370 120,358" stroke="rgba(8,6,4,0.88)" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <circle cx="72" cy="386" r="30" fill="rgba(192,92,122,0.42)"/>
+    <circle cx="98" cy="370" r="35" fill="rgba(198,100,130,0.40)"/>
+    <circle cx="126" cy="356" r="38" fill="rgba(195,96,126,0.42)"/>
+    <circle cx="153" cy="368" r="28" fill="rgba(190,94,122,0.40)"/>
+    <circle cx="120" cy="338" r="30" fill="rgba(202,108,135,0.38)"/>
+    <circle cx="58" cy="372" r="24" fill="rgba(196,98,128,0.36)"/>
+    <circle cx="148" cy="348" r="24" fill="rgba(191,95,124,0.36)"/>
+
+    <!-- Cherry blossom tree — RIGHT -->
+    <path d="M1325,520 C1324,492 1323,468 1322,444 C1322,428 1321,412 1320,396" stroke="rgba(8,6,4,0.95)" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <path d="M1321,425 C1330,417 1343,407 1362,396" stroke="rgba(8,6,4,0.90)" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M1320,408 C1310,400 1296,392 1278,385" stroke="rgba(8,6,4,0.90)" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M1320,396 C1320,382 1320,370 1320,358" stroke="rgba(8,6,4,0.88)" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <circle cx="1368" cy="386" r="30" fill="rgba(192,92,122,0.42)"/>
+    <circle cx="1342" cy="370" r="35" fill="rgba(198,100,130,0.40)"/>
+    <circle cx="1314" cy="356" r="38" fill="rgba(195,96,126,0.42)"/>
+    <circle cx="1287" cy="368" r="28" fill="rgba(190,94,122,0.40)"/>
+    <circle cx="1320" cy="338" r="30" fill="rgba(202,108,135,0.38)"/>
+    <circle cx="1382" cy="372" r="24" fill="rgba(196,98,128,0.36)"/>
+    <circle cx="1292" cy="348" r="24" fill="rgba(191,95,124,0.36)"/>
+
+    <!-- Ground base -->
+    <rect x="0" y="500" width="1440" height="20" fill="rgba(4,6,12,0.98)"/>
+
+    <!-- TEXT PROTECTION — critical gradient overlay so text is always readable -->
+    <rect x="0" y="0" width="1440" height="520" fill="url(#textProtect)"/>
   </svg>
   <div style="position:relative;z-index:2">
     <div class="hero-badge">Travel Proposal — Jerry & Sara invite you</div>
@@ -255,12 +340,12 @@ footer { text-align: center; padding: 32px; font-size: 14px; color: var(--text-3
 <!-- STATS -->
 <div class="stats">
   <div class="stat"><div class="stat-num">19</div><div class="stat-lbl">Days total</div></div>
-  <div class="stat"><div class="stat-num">5</div><div class="stat-lbl">Destinations</div><div style="font-size:13px;color:var(--text-3);margin-top:4px;text-transform:none;letter-spacing:0">incl. Kyoto &amp; Nara day trips</div></div>
-  <div class="stat"><div class="stat-num">8</div><div class="stat-lbl">Days in snow</div><div style="font-size:13px;color:var(--text-3);margin-top:4px;text-transform:none;letter-spacing:0">6-day lift pass · 10 resorts</div></div>
-  <div class="stat"><div class="stat-num">~$6.5k</div><div class="stat-lbl">pp — fully inclusive, start to finish</div><div style="font-size:13px;color:var(--text-3);margin-top:4px;text-transform:none;letter-spacing:0">Flights · hotels · ski pass · food · transport · insurance</div></div>
+  <div class="stat"><div class="stat-num">5</div><div class="stat-lbl">Destinations</div><div style="font-size:15px;color:var(--text-3);margin-top:4px;text-transform:none;letter-spacing:0">incl. Kyoto &amp; Nara day trips</div></div>
+  <div class="stat"><div class="stat-num">8</div><div class="stat-lbl">Days in snow</div><div style="font-size:15px;color:var(--text-3);margin-top:4px;text-transform:none;letter-spacing:0">6-day lift pass · 10 resorts</div></div>
+  <div class="stat"><div class="stat-num">~$6.5k</div><div class="stat-lbl">pp — fully inclusive, start to finish</div><div style="font-size:15px;color:var(--text-3);margin-top:4px;text-transform:none;letter-spacing:0">Flights · hotels · ski pass · food · transport · insurance</div></div>
 </div>
 
-<div style="max-width:960px;margin:0 auto">
+<div style="max-width:1200px;margin:0 auto">
 
 <!-- FLIGHTS -->
 <div class="section">
@@ -274,14 +359,15 @@ footer { text-align: center; padding: 32px; font-size: 14px; color: var(--text-3
           <div style="margin-top:10px;font-family:var(--serif);font-size:22px;font-weight:700;color:var(--am-l)">Jerry &amp; Sara</div>
         </div>
       </div>
+      <div class="fc-direction">✈ Outbound — Thu 17 Dec</div>
       <div class="flight-leg">
         <div class="fl-time">6:40</div>
         <div style="flex:1">
           <div class="fl-airport">Gold Coast (OOL)</div>
           <div class="fl-detail">JQ892 · A320 · Thu 17 Dec</div>
         </div>
-        <div>→</div>
-        <div style="text-align:right">
+        <div class="fl-arrow">→</div>
+        <div class="fl-dest" style="text-align:right">
           <div class="fl-airport">Cairns (CNS)</div>
           <div class="fl-detail">9:05am · 2h 25m</div>
         </div>
@@ -292,27 +378,40 @@ footer { text-align: center; padding: 32px; font-size: 14px; color: var(--text-3
           <div class="fl-airport">Cairns International</div>
           <div class="fl-detail">JQ25 · 787 Dreamliner · Thu 17 Dec</div>
         </div>
-        <div>→</div>
-        <div style="text-align:right">
+        <div class="fl-arrow">→</div>
+        <div class="fl-dest" style="text-align:right">
           <div class="fl-airport">Tokyo Narita (NRT)</div>
           <div class="fl-detail">6:15pm · 7h 20m</div>
         </div>
       </div>
+      <div class="fc-direction">✈ Return — Sun 3 Jan</div>
       <div class="flight-leg">
         <div class="fl-time">20:10</div>
         <div style="flex:1">
           <div class="fl-airport">Tokyo Narita (NRT)</div>
           <div class="fl-detail">JQ26 · 787 Dreamliner · Sun 3 Jan</div>
         </div>
-        <div>→</div>
-        <div style="text-align:right">
-          <div class="fl-airport">Cairns → Gold Coast</div>
-          <div class="fl-detail">Arrives OOL 12:00pm Mon 4 Jan</div>
+        <div class="fl-arrow">→</div>
+        <div class="fl-dest" style="text-align:right">
+          <div class="fl-airport">Cairns (CNS)</div>
+          <div class="fl-detail">4:35am Mon 4 Jan · 7h 25m</div>
+        </div>
+      </div>
+      <div class="flight-leg">
+        <div class="fl-time">9:45</div>
+        <div style="flex:1">
+          <div class="fl-airport">Cairns (CNS)</div>
+          <div class="fl-detail">JQ893 · A320 · Mon 4 Jan</div>
+        </div>
+        <div class="fl-arrow">→</div>
+        <div class="fl-dest" style="text-align:right">
+          <div class="fl-airport">Gold Coast (OOL)</div>
+          <div class="fl-detail">12:00pm · 2h 15m</div>
         </div>
       </div>
       <div class="flight-total">
-        <span style="font-size:15px;color:var(--text-2)">Total paid</span>
-        <div style="text-align:right"><div style="font-family:var(--serif);font-size:32px;font-weight:700;color:var(--am-l)">$2,219 <span style="font-size:18px">pp</span></div><div style="font-size:14px;color:var(--text-3);margin-top:2px">$4,437.60 total for both</div></div>
+        <span style="font-size:17px;color:var(--text-2)">Total paid</span>
+        <div class="fl-dest" style="text-align:right"><div style="font-family:var(--serif);font-size:32px;font-weight:700;color:var(--am-l)">$2,219 <span style="font-size:18px">pp</span></div><div style="font-size:16px;color:var(--text-3);margin-top:2px">$4,437.60 total for both</div></div>
       </div>
     </div>
     <!-- Drew & Prue - NEED TO BOOK -->
@@ -323,14 +422,15 @@ footer { text-align: center; padding: 32px; font-size: 14px; color: var(--text-3
           <div style="margin-top:10px;font-family:var(--serif);font-size:22px;font-weight:700;color:var(--cr-l)">Drew &amp; Prue</div>
         </div>
       </div>
+      <div class="fc-direction">✈ Outbound — Thu 17 Dec</div>
       <div class="flight-leg">
         <div class="fl-time">6:40</div>
         <div style="flex:1">
           <div class="fl-airport">Gold Coast (OOL)</div>
           <div class="fl-detail">Jetstar JQ892 · Thu 17 Dec</div>
         </div>
-        <div>→</div>
-        <div style="text-align:right">
+        <div class="fl-arrow">→</div>
+        <div class="fl-dest" style="text-align:right">
           <div class="fl-airport">Cairns (CNS)</div>
           <div class="fl-detail">9:05am</div>
         </div>
@@ -341,22 +441,35 @@ footer { text-align: center; padding: 32px; font-size: 14px; color: var(--text-3
           <div class="fl-airport">Cairns International</div>
           <div class="fl-detail">Jetstar JQ25 · 787 Dreamliner</div>
         </div>
-        <div>→</div>
-        <div style="text-align:right">
+        <div class="fl-arrow">→</div>
+        <div class="fl-dest" style="text-align:right">
           <div class="fl-airport">Tokyo Narita (NRT)</div>
           <div class="fl-detail">6:15pm · 7h 20m</div>
         </div>
       </div>
+      <div class="fc-direction">✈ Return — Sun 3 Jan</div>
       <div class="flight-leg">
         <div class="fl-time">20:10</div>
         <div style="flex:1">
           <div class="fl-airport">Tokyo Narita (NRT)</div>
           <div class="fl-detail">Jetstar JQ26 · Sun 3 Jan</div>
         </div>
-        <div>→</div>
-        <div style="text-align:right">
-          <div class="fl-airport">Cairns → Gold Coast</div>
-          <div class="fl-detail">Home by 12pm Mon 4 Jan</div>
+        <div class="fl-arrow">→</div>
+        <div class="fl-dest" style="text-align:right">
+          <div class="fl-airport">Cairns (CNS)</div>
+          <div class="fl-detail">4:35am Mon 4 Jan · 7h 25m</div>
+        </div>
+      </div>
+      <div class="flight-leg">
+        <div class="fl-time">9:45</div>
+        <div style="flex:1">
+          <div class="fl-airport">Cairns (CNS)</div>
+          <div class="fl-detail">Jetstar JQ893 · A320 · Mon 4 Jan</div>
+        </div>
+        <div class="fl-arrow">→</div>
+        <div class="fl-dest" style="text-align:right">
+          <div class="fl-airport">Gold Coast (OOL)</div>
+          <div class="fl-detail">12:00pm · 2h 15m</div>
         </div>
       </div>
       <div class="urgent-note">
@@ -369,7 +482,7 @@ footer { text-align: center; padding: 32px; font-size: 14px; color: var(--text-3
 <!-- ITINERARY -->
 <div class="section">
   <div class="section-title">Day-by-day</div>
-  <div style="font-size:15px;color:var(--text-3);margin-bottom:24px;text-align:center;letter-spacing:0.05em">↓ Click any section below to expand for more detail</div>
+  <div style="font-size:17px;color:var(--text-3);margin-bottom:24px;text-align:center;letter-spacing:0.05em">↓ Click any section below to expand for more detail</div>
 
   <!-- Phase 1: Tokyo -->
   <div class="phase ph-tokyo1">
@@ -404,8 +517,8 @@ footer { text-align: center; padding: 32px; font-size: 14px; color: var(--text-3
       </div>
       <div class="day-block">
         <div class="day-header"><span class="day-num">Days 2–4</span><span class="day-date">18–20 Dec</span><span class="day-title">Tokyo — The Hit List</span></div>
-        <div style="font-size:15px;color:var(--text-2);padding:6px 0 12px 0;font-style:italic">This is a non-exhaustive list — there's far more to Tokyo than three days can hold. Order TBC once we know everyone's priorities.</div>
-        <div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--cr-l);padding-bottom:8px">Sara's must-dos</div>
+        <div style="font-size:17px;color:var(--text-2);padding:6px 0 12px 0;font-style:italic">This is a non-exhaustive list — there's far more to Tokyo than three days can hold. Order TBC once we know everyone's priorities.</div>
+        <div style="font-size:15px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--cr-l);padding-bottom:8px">Sara's must-dos</div>
         <ul class="day-items" style="margin-bottom:16px">
           <li>🎢 <strong>Tokyo Disneyland</strong> — book tickets well in advance, December fills fast. Full day.</li>
           <li>🌊 <strong>Tokyo DisneySea</strong> — a completely separate park, easily another full day on its own</li>
@@ -416,7 +529,7 @@ footer { text-align: center; padding: 32px; font-size: 14px; color: var(--text-3
           <li>⛩️ <strong>Asakusa + Senso-ji</strong> — Nakamise Market for souvenirs, best before 8am when it's still quiet</li>
           <li>🍻 <strong>Shinjuku nights</strong> — Golden Gai (200+ tiny bars, each seats ~8), Omoide Yokocho for yakitori under the tracks</li>
         </ul>
-        <div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);padding-bottom:8px">Also worth considering</div>
+        <div style="font-size:15px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);padding-bottom:8px">Also worth considering</div>
         <ul class="day-items">
           <li>🐟 <strong>Tsukiji Outer Market</strong> — early morning breakfast sushi, freshest fish in the world</li>
           <li>🎨 <strong>TeamLab Planets</strong> — immersive digital art unlike anything in Australia. Book in advance.</li>
@@ -467,13 +580,13 @@ footer { text-align: center; padding: 32px; font-size: 14px; color: var(--text-3
       </div>
       <div class="day-block">
         <div class="day-header"><span class="day-num">Days 6–7</span><span class="day-date">22–23 Dec</span><span class="day-title">Osaka — The Hit List</span></div>
-        <div style="font-size:15px;color:var(--text-2);padding:6px 0 12px 0;font-style:italic">Non-exhaustive — Osaka rewards wandering. Order TBC once we know everyone's priorities.</div>
-        <div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--cr-l);padding-bottom:8px">On the plan</div>
+        <div style="font-size:17px;color:var(--text-2);padding:6px 0 12px 0;font-style:italic">Non-exhaustive — Osaka rewards wandering. Order TBC once we know everyone's priorities.</div>
+        <div style="font-size:15px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--cr-l);padding-bottom:8px">On the plan</div>
         <ul class="day-items" style="margin-bottom:16px">
           <li>🦌 <strong>Nara Deer Park</strong> — 45 min from Osaka, over 1,000 free-roaming deer. Feed them deer crackers. Unmissable.</li>
           <li>⛩️ <strong>Kyoto day trip</strong> — 30 min by Shinkansen. Fushimi Inari torii gates, Arashiyama Bamboo Grove, Nishiki Market</li>
         </ul>
-        <div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);padding-bottom:8px">Also worth considering</div>
+        <div style="font-size:15px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);padding-bottom:8px">Also worth considering</div>
         <ul class="day-items">
           <li>🏯 <strong>Osaka Castle</strong> — feudal Japan on a moat, surrounded by a park perfect for a morning walk</li>
           <li>🐟 <strong>Kuromon Ichiba Market</strong> — 180 stalls, freshest seafood in the city, ideal for breakfast</li>
@@ -526,15 +639,15 @@ footer { text-align: center; padding: 32px; font-size: 14px; color: var(--text-3
       </div>
       <div class="day-block">
         <div class="day-header"><span class="day-num">Days 9–10</span><span class="day-date">25–26 Dec</span><span class="day-title">Christmas & Boxing Day — The Hit List</span></div>
-        <div style="font-size:15px;color:var(--text-2);padding:6px 0 12px 0;font-style:italic">Non-exhaustive — and anything not covered in Tokyo Phase 1 rolls straight into here. Order TBC.</div>
-        <div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--sg-l);padding-bottom:8px">The big one — Christmas Day</div>
+        <div style="font-size:17px;color:var(--text-2);padding:6px 0 12px 0;font-style:italic">Non-exhaustive — and anything not covered in Tokyo Phase 1 rolls straight into here. Order TBC.</div>
+        <div style="font-size:15px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--sg-l);padding-bottom:8px">The big one — Christmas Day</div>
         <ul class="day-items" style="margin-bottom:16px">
           <li style="color:var(--sg-l)"><strong>Japan does not shut down for Christmas. Every restaurant, shop, and bar is open.</strong> This is the Christmas you've always deserved.</li>
           <li>🎨 <strong>TeamLab Borderless</strong> — newly reopened in Azabudai Hills, immersive digital art on a massive scale. Book ahead.</li>
           <li>♨️ <strong>Onsen day spa</strong> — soak the legs. After 8 days of walking, you've earned it.</li>
           <li>🍳 <strong>Kewpie Mayo Factory tour</strong> — free, fascinating, and very Japanese. Needs to be booked well in advance.</li>
         </ul>
-        <div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);padding-bottom:8px">Also worth considering</div>
+        <div style="font-size:15px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);padding-bottom:8px">Also worth considering</div>
         <ul class="day-items">
           <li>🛍️ <strong>Shibuya 109 + Isetan Shinjuku</strong> — final shopping assault before Hakuba. Isetan's basement food hall (depachika) is the finest curated food in Japan under one roof.</li>
           <li>🍜 <strong>Ichiran ramen</strong> — solo booths, rich tonkotsu broth. The perfect pre-Hakuba carb load.</li>
@@ -765,21 +878,25 @@ function toggle(header) {
   body.classList.toggle('open');
 }
 
-// Snow
+// Sakura petals + snowflakes
 const wrap = document.getElementById('snow');
-const flakes = ['❄', '❅', '❆'];
-for (let i = 0; i < 32; i++) {
+const snowflakes = ['❄','❅','❆'];
+const petals = ['✿','❀'];
+for (let i = 0; i < 40; i++) {
   const f = document.createElement('span');
   f.className = 'flake';
-  f.textContent = flakes[Math.floor(Math.random() * flakes.length)];
-  const sz = Math.random() * 14 + 8;
-  f.style.cssText = `
-    left: ${Math.random() * 100}%;
-    font-size: ${sz}px;
-    opacity: ${Math.random() * 0.35 + 0.1};
-    animation-duration: ${Math.random() * 10 + 8}s;
-    animation-delay: ${Math.random() * 10}s;
-  `;
+  const isSakura = Math.random() > 0.45;
+  if (isSakura) {
+    f.textContent = petals[Math.floor(Math.random() * petals.length)];
+    const sz = Math.random() * 16 + 10;
+    const op = Math.random() * 0.38 + 0.14;
+    f.style.cssText = `left:${Math.random()*100}%;font-size:${sz}px;color:rgba(215,130,162,${op});-webkit-animation:fall linear infinite;animation:fall linear infinite;animation-duration:${Math.random()*13+9}s;animation-delay:${Math.random()*12}s;`;
+  } else {
+    f.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+    const sz = Math.random() * 13 + 7;
+    const op = Math.random() * 0.32 + 0.10;
+    f.style.cssText = `left:${Math.random()*100}%;font-size:${sz}px;color:rgba(255,255,255,${op});-webkit-animation:fall linear infinite;animation:fall linear infinite;animation-duration:${Math.random()*10+8}s;animation-delay:${Math.random()*12}s;`;
+  }
   wrap.appendChild(f);
 }
 </script>
