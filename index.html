@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japan — December 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #060D1A;
+  --bg-2: #0C1525;
+  --bg-3: #111C30;
+  --border: rgba(255,255,255,0.07);
+  --border-2: rgba(255,255,255,0.13);
+  --text: #EDE6D4;
+  --text-2: #A09480;
+  --text-3: #5C5446;
+  --cr: #BE1B33; --cr-l: #E53050; --cr-bg: rgba(190,27,51,0.10);
+  --am: #C4891A; --am-l: #E5A530; --am-bg: rgba(196,137,26,0.10);
+  --sg: #1E7A4A; --sg-l: #35A467; --sg-bg: rgba(30,122,74,0.10);
+  --ic: #1855A0; --ic-l: #3A7FCC; --ic-bg: rgba(24,85,160,0.10);
+  --gold: #C89425;
+  --r: 12px; --r-sm: 8px;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+html { overflow-x: hidden; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+/* SNOW */
+.snow-wrap { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
+.flake { position: absolute; top: -30px; color: rgba(255,255,255,0.6); -webkit-animation: fall linear infinite; animation: fall linear infinite; -webkit-user-select: none; user-select: none; pointer-events: none; }
+@-webkit-keyframes fall { 0% { -webkit-transform: translateY(0) rotate(0deg) translateX(0); opacity: 1; } 33% { -webkit-transform: translateY(220px) rotate(120deg) translateX(12px); } 66% { -webkit-transform: translateY(440px) rotate(240deg) translateX(-8px); } 100% { -webkit-transform: translateY(660px) rotate(360deg) translateX(5px); opacity: 0; } }
+@keyframes fall { 0% { transform: translateY(0) rotate(0deg) translateX(0); opacity: 1; } 33% { transform: translateY(220px) rotate(120deg) translateX(12px); } 66% { transform: translateY(440px) rotate(240deg) translateX(-8px); } 100% { transform: translateY(660px) rotate(360deg) translateX(5px); opacity: 0; } }
+
+/* HERO */
+.hero { position: relative; min-height: 520px; display: flex; flex-direction: column; justify-content: flex-end; padding: 60px 5%; overflow: hidden; background: linear-gradient(165deg, #06101C 0%, #0B1A2E 40%, #0A1220 100%); border-bottom: 1px solid var(--border); }
+.hero-grid { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.02) 60px), repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.02) 60px); }
+.hero-badge { display: inline-block; font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,148,37,0.35); padding: 6px 14px; border-radius: 30px; margin-bottom: 20px; }
+.hero h1 { font-family: var(--serif); font-size: clamp(72px, 12vw, 130px); font-weight: 700; line-height: 0.9; color: var(--text); letter-spacing: -2px; margin-bottom: 8px; }
+.hero h1 span { color: var(--cr); }
+.hero-dates { font-family: var(--serif); font-size: clamp(18px, 3vw, 26px); font-style: italic; color: var(--text-2); margin-bottom: 20px; }
+.hero-names { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.hero-name { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2); padding: 5px 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-2); border-radius: 20px; }
+.hero-name.you { color: var(--gold); border-color: rgba(200,148,37,0.3); background: rgba(200,148,37,0.06); }
+.hero-tagline { margin-top: 28px; font-size: 15px; color: var(--text-2); max-width: 560px; line-height: 1.7; padding-top: 20px; border-top: 1px solid var(--border); }
+
+/* STATS BAR */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-bottom: 1px solid var(--border); }
+.stat { background: var(--bg-2); padding: 22px 28px; }
+.stat-num { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--text); }
+.stat-lbl { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); margin-top: 4px; }
+
+/* SECTION LAYOUT */
+.section { padding: 56px 5%; border-bottom: 1px solid var(--border); max-width: 960px; margin: 0 auto; }
+.section-title { font-family: var(--serif); font-size: 11px; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-3); margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+.section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* FLIGHTS */
+.flights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.flight-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--r); padding: 24px; }
+.flight-card.booked { border-color: rgba(200,148,37,0.25); }
+.flight-card.urgent { border-color: rgba(190,27,51,0.35); }
+.fc-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.fc-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
+.tag-booked { background: rgba(200,148,37,0.15); color: var(--am-l); }
+.tag-urgent { background: rgba(190,27,51,0.15); color: var(--cr-l); }
+.fc-names { font-size: 13px; color: var(--text-2); font-weight: 500; }
+.flight-leg { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.flight-leg:last-child { border-bottom: none; }
+.fl-time { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); min-width: 70px; }
+.fl-arrow { font-size: 18px; color: var(--text-3); flex: 1; text-align: center; }
+.fl-meta { font-size: 12px; color: var(--text-2); line-height: 1.4; }
+.fl-airport { font-weight: 600; color: var(--text); font-size: 13px; }
+.fl-detail { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+.flight-total { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.urgent-note { margin-top: 14px; background: var(--cr-bg); border: 1px solid rgba(190,27,51,0.25); border-radius: var(--r-sm); padding: 12px 14px; font-size: 13px; color: #F08090; line-height: 1.5; }
+
+/* PHASE BLOCKS */
+.phase { border-radius: var(--r); border: 1px solid var(--border); overflow: hidden; margin-bottom: 20px; }
+.phase-header { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px; padding: 24px 28px; cursor: pointer; -webkit-user-select: none; user-select: none; touch-action: manipulation; -webkit-tap-highlight-color: transparent; transition: background 0.2s; }
+.phase-header:hover { background: rgba(255,255,255,0.02); }
+.phase-icon { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.phase-meta { }
+.phase-title { font-family: var(--serif); font-size: 26px; font-weight: 700; line-height: 1; }
+.phase-sub { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 5px; }
+.phase-dates { text-align: right; }
+.phase-nights { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
+.phase-date-str { font-size: 13px; color: var(--text-2); margin-top: 4px; }
+.phase-chevron { transition: transform 0.3s; color: var(--text-3); font-size: 20px; }
+.phase-header.open .phase-chevron { transform: rotate(180deg); }
+.phase-body { padding: 0 28px 28px; display: none; }
+.phase-body.open { display: block; padding-top: 20px; }
+.phase-accom { display: flex; align-items: flex-start; gap: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 14px 16px; margin-bottom: 20px; font-size: 13px; }
+.phase-accom strong { color: var(--text); font-weight: 600; }
+.phase-accom span { color: var(--text-2); }
+.day-block { margin-bottom: 16px; }
+.day-header { display: flex; align-items: baseline; gap: 14px; padding: 12px 0 8px; border-top: 1px solid var(--border); }
+.day-num { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); min-width: 52px; }
+.day-date { font-size: 11px; color: var(--text-3); }
+.day-title { font-family: var(--serif); font-size: 16px; font-style: italic; color: var(--text); flex: 1; }
+.day-items { list-style: none; padding-left: 66px; }
+.day-items li { font-size: 14px; color: var(--text-2); padding: 3px 0; line-height: 1.5; position: relative; }
+.day-items li::before { content: '—'; position: absolute; left: -20px; color: var(--text-3); }
+
+/* Phase colours */
+.ph-tokyo1 .phase-header { background: var(--cr-bg); border-bottom: 1px solid var(--border); }
+.ph-tokyo1 .phase-title { color: var(--cr-l); }
+.ph-tokyo1 .phase-sub { color: var(--cr); }
+.ph-tokyo1 .phase-icon { background: var(--cr-bg); color: var(--cr-l); }
+.ph-tokyo1 .phase-nights { background: var(--cr-bg); color: var(--cr-l); }
+.ph-osaka .phase-header { background: var(--am-bg); border-bottom: 1px solid var(--border); }
+.ph-osaka .phase-title { color: var(--am-l); }
+.ph-osaka .phase-sub { color: var(--am); }
+.ph-osaka .phase-icon { background: var(--am-bg); color: var(--am-l); }
+.ph-osaka .phase-nights { background: var(--am-bg); color: var(--am-l); }
+.ph-tokyo2 .phase-header { background: var(--sg-bg); border-bottom: 1px solid var(--border); }
+.ph-tokyo2 .phase-title { color: var(--sg-l); }
+.ph-tokyo2 .phase-sub { color: var(--sg); }
+.ph-tokyo2 .phase-icon { background: var(--sg-bg); color: var(--sg-l); }
+.ph-tokyo2 .phase-nights { background: var(--sg-bg); color: var(--sg-l); }
+.ph-hakuba .phase-header { background: var(--ic-bg); border-bottom: 1px solid var(--border); }
+.ph-hakuba .phase-title { color: var(--ic-l); }
+.ph-hakuba .phase-sub { color: var(--ic); }
+.ph-hakuba .phase-icon { background: var(--ic-bg); color: var(--ic-l); }
+.ph-hakuba .phase-nights { background: var(--ic-bg); color: var(--ic-l); }
+
+/* HAKUBA FEATURE */
+.feature-box { background: var(--ic-bg); border: 1px solid rgba(24,85,160,0.3); border-radius: var(--r); padding: 36px 40px; margin-bottom: 20px; }
+.feature-box h3 { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--ic-l); margin-bottom: 6px; }
+.feature-box p { font-size: 15px; color: var(--text-2); line-height: 1.7; margin-bottom: 20px; }
+.stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+.ski-stat { background: rgba(0,0,0,0.25); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 18px; text-align: center; }
+.ski-stat-num { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ic-l); }
+.ski-stat-lbl { font-size: 12px; color: var(--text-2); margin-top: 4px; }
+.highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+.hl { display: flex; gap: 12px; align-items: flex-start; }
+.hl-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ic-l); flex-shrink: 0; margin-top: 6px; }
+.hl p { font-size: 13px; color: var(--text-2); }
+.hl strong { color: var(--text); font-weight: 600; }
+
+/* COST TABLE */
+.cost-table { width: 100%; border-collapse: collapse; }
+.cost-table th { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); padding: 10px 16px; text-align: left; background: var(--bg-3); border-bottom: 1px solid var(--border); }
+.cost-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; vertical-align: top; }
+.cost-table tr:hover td { background: rgba(255,255,255,0.02); }
+.cost-table .item-icon { font-size: 18px; width: 36px; }
+.cost-table .item-name { color: var(--text); font-weight: 500; }
+.cost-table .item-note { font-size: 12px; color: var(--text-2); margin-top: 3px; }
+.cost-table .item-amt { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--text); white-space: nowrap; }
+.cost-total td { background: rgba(200,148,37,0.08); border-top: 2px solid rgba(200,148,37,0.3); border-bottom: none; }
+.cost-total .item-name { font-family: var(--serif); font-size: 18px; color: var(--gold); }
+.cost-total .item-note { color: var(--text-2); }
+.cost-total .item-amt { color: var(--gold); font-size: 28px; }
+
+/* INSURANCE */
+.insurance-box { background: rgba(200,148,37,0.06); border: 1px solid rgba(200,148,37,0.25); border-radius: var(--r); padding: 24px 28px; display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: flex-start; }
+.ins-icon { font-size: 32px; }
+.ins-title { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--am-l); margin-bottom: 8px; }
+.ins-body { font-size: 14px; color: var(--text-2); line-height: 1.7; }
+.ins-body strong { color: var(--text); }
+
+/* BOOK NOW */
+.book-section { text-align: center; padding: 64px 5%; }
+.book-section h2 { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+.book-section h2 span { color: var(--cr-l); font-style: italic; }
+.book-section p { font-size: 16px; color: var(--text-2); max-width: 520px; margin: 0 auto 32px; }
+.book-btn { display: inline-block; padding: 16px 48px; background: var(--cr); color: white; font-size: 14px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 40px; touch-action: manipulation; -webkit-tap-highlight-color: transparent; transition: background 0.2s, transform 0.1s; }
+.hero-name { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2); padding: 5px 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-2); border-radius: 20px; margin: 4px 0; }
+.book-ref { margin-top: 24px; font-size: 13px; color: var(--text-3); }
+.book-ref strong { color: var(--text-2); }
+
+.book-btn:hover { background: var(--cr-l); transform: translateY(-1px); }
+
+/* FOOTER */
+footer { text-align: center; padding: 32px; font-size: 12px; color: var(--text-3); border-top: 1px solid var(--border); }
+
+/* RESPONSIVE — 700px */
+@media (max-width: 700px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .flights-grid { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: 1fr; }
+  .highlights-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 72px; }
+  .section { padding: 40px 20px; }
+}
+
+/* RESPONSIVE — 480px (small phones, FB in-app browser) */
+@media (max-width: 480px) {
+  .hero { padding: 40px 16px; min-height: 400px; }
+  .hero-tagline { font-size: 14px; }
+  .phase-header { padding: 14px 16px; gap: 10px; }
+  .phase-icon { width: 40px; height: 40px; font-size: 18px; }
+  .phase-title { font-size: 20px; }
+  .phase-sub { font-size: 10px; letter-spacing: 0.08em; }
+  .phase-date-str { display: none; }
+  .phase-body { padding: 0 16px 20px; }
+  .phase-body.open { padding-top: 14px; }
+  .day-items { padding-left: 36px; }
+  .cost-table .item-icon { display: none; }
+  .cost-table th:first-child { display: none; }
+  .cost-table .item-amt { font-size: 16px; }
+  .cost-total .item-amt { font-size: 20px; }
+  .feature-box { padding: 20px; }
+  .insurance-box { grid-template-columns: 1fr; gap: 10px; }
+  .ins-icon { display: none; }
+  .book-section { padding: 40px 16px; }
+  .book-section h2 { font-size: 32px; }
+  .book-btn { padding: 14px 28px; font-size: 13px; }
+  .stat { padding: 16px; }
+  .stat-num { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="snow-wrap" id="snow"></div>
+  <svg style="position:absolute;bottom:0;left:0;width:100%;pointer-events:none;z-index:1" viewBox="0 0 1440 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Layer 1: Farthest mountains, hazy blue-grey -->
+    <path d="M0,260 L0,185 C30,178 55,165 80,155 C105,145 125,138 155,128 C180,120 205,118 230,125 C255,132 270,122 295,112 C318,103 340,95 365,88 C390,81 410,86 435,95 C455,103 470,98 492,90 C515,82 535,75 558,70 C580,65 600,68 622,75 C642,81 660,78 682,70 C705,62 725,56 748,52 C770,48 790,53 812,60 C832,67 850,63 872,56 C895,49 918,44 940,48 C962,52 980,58 1002,64 C1022,70 1040,66 1062,58 C1085,50 1108,44 1130,48 C1152,52 1168,60 1190,68 C1210,75 1230,72 1252,65 C1275,58 1298,55 1320,60 C1342,65 1362,72 1390,80 C1410,86 1428,90 1440,94 L1440,260 Z" fill="rgba(45,75,120,0.28)"/>
+    <!-- Snow caps layer 1 -->
+    <path d="M365,88 C372,82 378,76 385,80 C390,83 395,88 400,90 M558,70 C566,63 573,57 580,61 C586,65 591,70 597,73 M748,52 C757,44 765,38 773,43 C780,48 786,53 792,57 M940,48 C949,41 957,35 965,40 C972,45 978,50 984,54 M1130,48 C1139,41 1147,35 1155,39 C1162,44 1168,49 1174,53" fill="rgba(210,228,255,0.22)" stroke="none"/>
+    <!-- Layer 2: Mid-distant peaks, more defined -->
+    <path d="M0,260 L0,200 C25,193 48,182 72,170 C95,159 115,152 140,142 C162,133 182,128 205,135 C225,141 240,132 262,120 C283,109 302,100 325,92 C347,84 366,88 388,98 C407,107 422,102 445,92 C468,82 488,74 512,68 C535,62 555,66 577,74 C597,81 614,77 636,68 C658,59 678,52 702,48 C724,44 744,50 766,58 C786,65 804,60 826,52 C848,44 870,38 892,43 C915,48 933,56 955,62 C975,68 993,63 1016,54 C1038,46 1060,40 1082,45 C1104,50 1120,59 1142,67 C1162,74 1180,70 1202,62 C1224,54 1246,49 1268,54 C1290,59 1308,67 1330,74 C1352,81 1372,78 1400,85 C1418,90 1432,93 1440,96 L1440,260 Z" fill="rgba(25,52,92,0.52)"/>
+    <!-- Snow caps layer 2 -->
+    <path d="M325,92 C335,83 344,75 353,81 C360,86 366,93 372,97 M512,68 C523,59 532,51 541,57 C548,62 554,68 560,73 M702,48 C714,38 724,30 733,36 C741,42 747,49 753,54 M892,43 C904,33 914,25 923,31 C931,37 937,44 943,49 M1082,45 C1094,35 1104,27 1113,33 C1121,39 1127,46 1133,51 M1268,54 C1278,45 1287,37 1296,43 C1303,48 1309,55 1315,60" fill="rgba(225,238,255,0.3)" stroke="none"/>
+    <!-- Layer 3: Closer mountains, darker and more dramatic -->
+    <path d="M0,260 L0,215 C20,208 40,198 65,186 C88,175 108,168 132,158 C155,148 175,142 198,150 C218,157 232,148 255,136 C277,125 297,116 320,108 C342,100 362,105 384,115 C403,124 418,118 440,108 C463,97 483,88 506,82 C530,76 550,80 572,88 C592,96 610,91 632,82 C655,73 676,65 700,61 C723,57 743,63 766,72 C787,80 805,75 828,66 C851,57 873,50 896,55 C919,60 938,68 961,75 C982,82 1001,77 1024,68 C1047,59 1069,52 1092,57 C1115,62 1133,71 1156,79 C1177,87 1196,83 1219,74 C1242,65 1264,59 1287,64 C1310,69 1329,78 1352,86 C1374,93 1395,90 1420,95 C1430,97 1436,99 1440,100 L1440,260 Z" fill="rgba(12,28,58,0.80)"/>
+    <!-- Snow caps layer 3 - most prominent -->
+    <path d="M320,108 L332,95 L340,88 L348,95 L358,107 Z M506,82 L519,68 L528,60 L537,68 L549,80 Z M700,61 L714,46 L724,38 L734,46 L748,59 Z M896,55 L910,40 L920,32 L930,40 L944,53 Z M1092,57 L1106,42 L1116,34 L1126,42 L1140,55 Z M1287,64 L1300,50 L1309,42 L1319,50 L1332,62 Z" fill="rgba(235,245,255,0.42)"/>
+    <!-- Tree line - foreground silhouette -->
+    <path d="M0,260 L0,238 L12,232 L18,238 L26,228 L32,238 L40,224 L46,238 L55,220 L60,238 L68,226 L74,235 L82,222 L88,235 L96,228 L104,238 L112,224 L118,238 L126,220 L132,238 L140,230 L148,238 L156,226 L162,238 L170,222 L176,235 L184,228 L192,238 L200,225 L208,238 L216,230 L224,238 L232,224 L238,235 L246,228 L254,238 L262,222 L268,238 L276,230 L284,235 L292,225 L298,238 L306,228 L314,232 L322,238 L330,225 L338,235 L346,228 L354,238 L362,222 L368,235 L376,228 L384,238 L392,230 L400,235 L408,228 L416,238 L424,225 L430,235 L438,228 L446,238 L454,222 L460,235 L468,230 L476,238 L484,228 L492,232 L500,238 L508,224 L514,238 L522,228 L530,232 L538,238 L546,225 L552,235 L560,228 L568,238 L576,222 L582,235 L590,228 L598,238 L606,230 L614,235 L622,225 L628,238 L636,228 L644,232 L652,238 L660,222 L666,235 L674,228 L682,238 L690,224 L696,238 L704,228 L712,232 L720,238 L728,225 L734,235 L742,228 L750,238 L758,222 L764,235 L772,228 L780,238 L788,230 L796,235 L804,225 L810,238 L818,228 L826,232 L834,238 L842,222 L848,235 L856,228 L864,238 L872,224 L878,238 L886,228 L894,232 L902,238 L910,225 L916,235 L924,228 L932,238 L940,222 L946,235 L954,228 L962,238 L970,230 L978,235 L986,225 L992,238 L1000,228 L1008,232 L1016,238 L1024,222 L1030,235 L1038,228 L1046,238 L1054,224 L1060,238 L1068,228 L1076,232 L1084,238 L1092,225 L1098,235 L1106,228 L1114,238 L1122,222 L1128,235 L1136,228 L1144,238 L1152,230 L1160,235 L1168,225 L1174,238 L1182,228 L1190,232 L1198,238 L1206,222 L1212,235 L1220,228 L1228,238 L1236,224 L1242,238 L1250,228 L1258,232 L1266,238 L1274,225 L1280,235 L1288,228 L1296,238 L1304,222 L1310,235 L1318,228 L1326,238 L1334,230 L1342,235 L1350,225 L1356,238 L1364,228 L1372,232 L1380,238 L1388,222 L1394,235 L1402,228 L1410,238 L1418,230 L1426,235 L1434,228 L1440,232 L1440,260 Z" fill="rgba(4,10,22,0.97)"/>
+  </svg>
+  <div style="position:relative;z-index:2">
+    <div class="hero-badge">Travel Proposal — Jerry & Sara invite you</div>
+    <h1>JAPAN<span>.</span></h1>
+    <div class="hero-dates">17 December 2026 – 4 January 2027</div>
+    <div class="hero-names">
+      <span class="hero-name you">Jerry</span>
+      <span class="hero-name you">Sara</span>
+      <span class="hero-name">Drew</span>
+      <span class="hero-name">Prue</span>
+    </div>
+    <div class="hero-tagline">
+      19 days. Four friends. Tokyo by night, bullet trains through rice fields, Osaka street food, Christmas in a city that doesn't shut down — and six days shredding the best powder on earth in the Japanese Alps.
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">19</div><div class="stat-lbl">Days total</div></div>
+  <div class="stat"><div class="stat-num">5</div><div class="stat-lbl">Destinations</div><div style="font-size:11px;color:var(--text-3);margin-top:4px;text-transform:none;letter-spacing:0">incl. Kyoto &amp; Nara day trips</div></div>
+  <div class="stat"><div class="stat-num">8</div><div class="stat-lbl">Days in snow</div><div style="font-size:11px;color:var(--text-3);margin-top:4px;text-transform:none;letter-spacing:0">6-day lift pass · 10 resorts</div></div>
+  <div class="stat"><div class="stat-num">~$6.5k</div><div class="stat-lbl">pp — fully inclusive, start to finish</div><div style="font-size:11px;color:var(--text-3);margin-top:4px;text-transform:none;letter-spacing:0">Flights · hotels · ski pass · food · transport · insurance</div></div>
+</div>
+
+<div style="max-width:960px;margin:0 auto">
+
+<!-- FLIGHTS -->
+<div class="section">
+  <div class="section-title">Getting there</div>
+  <div class="flights-grid">
+    <!-- Jerry & Sara - BOOKED -->
+    <div class="flight-card booked">
+      <div class="fc-head">
+        <div>
+          <div class="fc-tag tag-booked">✓ Booked — Ref: QQ1Z3D</div>
+          <div style="margin-top:10px;font-family:var(--serif);font-size:22px;font-weight:700;color:var(--am-l)">Jerry &amp; Sara</div>
+        </div>
+      </div>
+      <div class="flight-leg">
+        <div class="fl-time">6:40</div>
+        <div style="flex:1">
+          <div class="fl-airport">Gold Coast (OOL)</div>
+          <div class="fl-detail">JQ892 · A320 · Thu 17 Dec</div>
+        </div>
+        <div>→</div>
+        <div style="text-align:right">
+          <div class="fl-airport">Cairns (CNS)</div>
+          <div class="fl-detail">9:05am · 2h 25m</div>
+        </div>
+      </div>
+      <div class="flight-leg">
+        <div class="fl-time">11:55</div>
+        <div style="flex:1">
+          <div class="fl-airport">Cairns International</div>
+          <div class="fl-detail">JQ25 · 787 Dreamliner · Thu 17 Dec</div>
+        </div>
+        <div>→</div>
+        <div style="text-align:right">
+          <div class="fl-airport">Tokyo Narita (NRT)</div>
+          <div class="fl-detail">6:15pm · 7h 20m</div>
+        </div>
+      </div>
+      <div class="flight-leg">
+        <div class="fl-time">20:10</div>
+        <div style="flex:1">
+          <div class="fl-airport">Tokyo Narita (NRT)</div>
+          <div class="fl-detail">JQ26 · 787 Dreamliner · Sun 3 Jan</div>
+        </div>
+        <div>→</div>
+        <div style="text-align:right">
+          <div class="fl-airport">Cairns → Gold Coast</div>
+          <div class="fl-detail">Arrives OOL 12:00pm Mon 4 Jan</div>
+        </div>
+      </div>
+      <div class="flight-total">
+        <span style="font-size:13px;color:var(--text-2)">Total paid</span>
+        <div style="text-align:right"><div style="font-family:var(--serif);font-size:32px;font-weight:700;color:var(--am-l)">$2,219 <span style="font-size:16px">pp</span></div><div style="font-size:12px;color:var(--text-3);margin-top:2px">$4,437.60 total for both</div></div>
+      </div>
+    </div>
+    <!-- Drew & Prue - NEED TO BOOK -->
+    <div class="flight-card urgent">
+      <div class="fc-head">
+        <div>
+          <div class="fc-tag tag-urgent">⚡ Book now — prices rising fast</div>
+          <div style="margin-top:10px;font-family:var(--serif);font-size:22px;font-weight:700;color:var(--cr-l)">Drew &amp; Prue</div>
+        </div>
+      </div>
+      <div class="flight-leg">
+        <div class="fl-time">6:40</div>
+        <div style="flex:1">
+          <div class="fl-airport">Gold Coast (OOL)</div>
+          <div class="fl-detail">Jetstar JQ892 · Thu 17 Dec</div>
+        </div>
+        <div>→</div>
+        <div style="text-align:right">
+          <div class="fl-airport">Cairns (CNS)</div>
+          <div class="fl-detail">9:05am</div>
+        </div>
+      </div>
+      <div class="flight-leg">
+        <div class="fl-time">11:55</div>
+        <div style="flex:1">
+          <div class="fl-airport">Cairns International</div>
+          <div class="fl-detail">Jetstar JQ25 · 787 Dreamliner</div>
+        </div>
+        <div>→</div>
+        <div style="text-align:right">
+          <div class="fl-airport">Tokyo Narita (NRT)</div>
+          <div class="fl-detail">6:15pm · 7h 20m</div>
+        </div>
+      </div>
+      <div class="flight-leg">
+        <div class="fl-time">20:10</div>
+        <div style="flex:1">
+          <div class="fl-airport">Tokyo Narita (NRT)</div>
+          <div class="fl-detail">Jetstar JQ26 · Sun 3 Jan</div>
+        </div>
+        <div>→</div>
+        <div style="text-align:right">
+          <div class="fl-airport">Cairns → Gold Coast</div>
+          <div class="fl-detail">Home by 12pm Mon 4 Jan</div>
+        </div>
+      </div>
+      <div class="urgent-note">
+        ⚠️ December peak pricing — similar dates are available right now at ~$2,200pp but these <strong>will go up</strong>. Jerry paid $2,219pp. Book the same Jetstar OOL→CRN→NRT routing now at <strong>jetstar.com</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<div class="section">
+  <div class="section-title">Day-by-day</div>
+  <div style="font-size:13px;color:var(--text-3);margin-bottom:24px;text-align:center;letter-spacing:0.05em">↓ Click any section below to expand for more detail</div>
+
+  <!-- Phase 1: Tokyo -->
+  <div class="phase ph-tokyo1">
+    <div class="phase-header" onclick="toggle(this)">
+      <div class="phase-icon">⛩️</div>
+      <div class="phase-meta">
+        <div class="phase-title">Tokyo</div>
+        <div class="phase-sub">Chapter One — The City That Never Stops</div>
+      </div>
+      <div class="phase-dates">
+        <div class="phase-nights">4 nights</div>
+        <div class="phase-date-str">17 – 21 December</div>
+        <div class="phase-chevron" style="text-align:right;margin-top:8px">▾</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-accom">
+        <span style="font-size:20px">🏨</span>
+        <div>
+          <strong>9h Capsule Hotel Akasaka</strong>
+          <br><span>~$60pp/night · Gender-separated floors (men's floor / women's floor — no mixing) · Futuristic pods, spotlessly clean, slap bang in central Tokyo</span>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Day 1</span><span class="day-date">Thu 17 Dec</span><span class="day-title">Touchdown Tokyo</span></div>
+        <ul class="day-items">
+          <li>Land at Narita 6:15pm — Narita Express (N'EX) to Shinjuku, ~45 min, ~$37 AUD</li>
+          <li>Check in to 9h Capsule Hotel, Akasaka. Your pod awaits.</li>
+          <li>First konbini run — 7-Eleven Japan is a completely different beast. Onigiri, Asahi, Pocky.</li>
+          <li>Walk to Akasaka-Mitsuke. Get your first ramen. You'll immediately understand why you're here.</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Days 2–4</span><span class="day-date">18–20 Dec</span><span class="day-title">Tokyo — The Hit List</span></div>
+        <div style="font-size:13px;color:var(--text-2);padding:6px 0 12px 0;font-style:italic">This is a non-exhaustive list — there's far more to Tokyo than three days can hold. Order TBC once we know everyone's priorities.</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--cr-l);padding-bottom:8px">Sara's must-dos</div>
+        <ul class="day-items" style="margin-bottom:16px">
+          <li>🎢 <strong>Tokyo Disneyland</strong> — book tickets well in advance, December fills fast. Full day.</li>
+          <li>🌊 <strong>Tokyo DisneySea</strong> — a completely separate park, easily another full day on its own</li>
+          <li>🎮 <strong>Pokémon Centre</strong> — multiple locations (Shibuya, Ikebukuro), free entry, dangerous for the wallet</li>
+          <li>🏎️ <strong>Mario Kart through Tokyo</strong> — street go-karts in costume through Akihabara (Akiba Kart). Book ahead.</li>
+          <li>👘 <strong>Harajuku</strong> — Takeshita Street for cosplay chaos, Omotesando for the upscale version</li>
+          <li>🕹️ <strong>Akihabara</strong> — electronics towers, retro arcades, full sensory overload</li>
+          <li>⛩️ <strong>Asakusa + Senso-ji</strong> — Nakamise Market for souvenirs, best before 8am when it's still quiet</li>
+          <li>🍻 <strong>Shinjuku nights</strong> — Golden Gai (200+ tiny bars, each seats ~8), Omoide Yokocho for yakitori under the tracks</li>
+        </ul>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);padding-bottom:8px">Also worth considering</div>
+        <ul class="day-items">
+          <li>🐟 <strong>Tsukiji Outer Market</strong> — early morning breakfast sushi, freshest fish in the world</li>
+          <li>🎨 <strong>TeamLab Planets</strong> — immersive digital art unlike anything in Australia. Book in advance.</li>
+          <li>🗼 <strong>Tokyo Skytree</strong> (634m) — sunset views over the city, Shibuya Crossing nearby for the famous pedestrian scramble</li>
+          <li>🏯 <strong>Meiji Shrine</strong> — forested walk in the middle of the city, a genuine breath of fresh air</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Day 5 AM</span><span class="day-date">Mon 21 Dec</span><span class="day-title">Shinkansen Morning</span></div>
+        <ul class="day-items">
+          <li>Check out of 9h Akasaka, luggage to lockers at Tokyo Station</li>
+          <li>Board the <strong>Nozomi</strong> at Tokyo Station — 300km/h, 2h 21min to Shin-Osaka</li>
+          <li>Sit on the <strong>right side</strong> (window seat D/E) for a Mt Fuji flyby</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 2: Osaka -->
+  <div class="phase ph-osaka">
+    <div class="phase-header" onclick="toggle(this)">
+      <div class="phase-icon">🐙</div>
+      <div class="phase-meta">
+        <div class="phase-title">Osaka</div>
+        <div class="phase-sub">The Nation's Kitchen — Eat. Eat. Eat.</div>
+      </div>
+      <div class="phase-dates">
+        <div class="phase-nights">3 nights</div>
+        <div class="phase-date-str">21 – 24 December</div>
+        <div class="phase-chevron" style="text-align:right;margin-top:8px">▾</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-accom">
+        <span style="font-size:20px">🏨</span>
+        <div>
+          <strong>Central Osaka budget hotel — Namba or Shinsaibashi area</strong>
+          <br><span>~$60pp/night · Walk to everything · Best neighbourhood for Dotonbori access</span>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Day 5 PM</span><span class="day-date">Mon 21 Dec</span><span class="day-title">Welcome to the Food Capital</span></div>
+        <ul class="day-items">
+          <li>Check in, drop bags, head straight to <strong>Dotonbori</strong> — Osaka's iconic canal-side shopping and dining strip</li>
+          <li>Find the <strong>Glico Running Man</strong> sign on the Dotonbori canal — the most photographed spot in Osaka. You'll know it when you see it.</li>
+          <li>Dinner: take your pick — <strong>okonomiyaki</strong> (savoury pancake), <strong>takoyaki</strong> (octopus balls), or go bold with <strong>fugu</strong> (blowfish — an Osaka speciality, book a licensed restaurant ahead of time)</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Days 6–7</span><span class="day-date">22–23 Dec</span><span class="day-title">Osaka — The Hit List</span></div>
+        <div style="font-size:13px;color:var(--text-2);padding:6px 0 12px 0;font-style:italic">Non-exhaustive — Osaka rewards wandering. Order TBC once we know everyone's priorities.</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--cr-l);padding-bottom:8px">On the plan</div>
+        <ul class="day-items" style="margin-bottom:16px">
+          <li>🦌 <strong>Nara Deer Park</strong> — 45 min from Osaka, over 1,000 free-roaming deer. Feed them deer crackers. Unmissable.</li>
+          <li>⛩️ <strong>Kyoto day trip</strong> — 30 min by Shinkansen. Fushimi Inari torii gates, Arashiyama Bamboo Grove, Nishiki Market</li>
+        </ul>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);padding-bottom:8px">Also worth considering</div>
+        <ul class="day-items">
+          <li>🏯 <strong>Osaka Castle</strong> — feudal Japan on a moat, surrounded by a park perfect for a morning walk</li>
+          <li>🐟 <strong>Kuromon Ichiba Market</strong> — 180 stalls, freshest seafood in the city, ideal for breakfast</li>
+          <li>🏙️ <strong>Shinsekai</strong> — retro 1930s neighbourhood, local kushikatsu joints, zero tourists</li>
+          <li>🌆 <strong>Umeda Sky Building</strong> — dramatic floating garden observatory, best visited at night</li>
+          <li>🛍️ <strong>Shinsaibashi shopping arcade</strong> — covered mall stretching for blocks, great for fashion and souvenirs</li>
+          <li>🎢 <strong>Universal Studios Japan</strong> — Nintendo World is the drawcard. Worth it if the group wants another theme park day.</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Day 8 AM</span><span class="day-date">Thu 24 Dec</span><span class="day-title">Back to Tokyo — Christmas Eve!</span></div>
+        <ul class="day-items">
+          <li>Check out Osaka hotel, Nozomi Shinkansen back to Tokyo (2h 21min)</li>
+          <li>Check back into 9h Akasaka — same crew, same neighbourhood, same energy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 3: Tokyo Christmas -->
+  <div class="phase ph-tokyo2">
+    <div class="phase-header" onclick="toggle(this)">
+      <div class="phase-icon">🎄</div>
+      <div class="phase-meta">
+        <div class="phase-title">Tokyo</div>
+        <div class="phase-sub">Christmas in a City That Stays Open</div>
+      </div>
+      <div class="phase-dates">
+        <div class="phase-nights">3 nights</div>
+        <div class="phase-date-str">24 – 27 December</div>
+        <div class="phase-chevron" style="text-align:right;margin-top:8px">▾</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-accom">
+        <span style="font-size:20px">🏨</span>
+        <div>
+          <strong>9h Capsule Hotel Akasaka</strong>
+          <br><span>~$60pp/night · Back to base · Christmas in Tokyo is nothing like Christmas in Australia — in the best possible way</span>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Day 8 PM</span><span class="day-date">Thu 24 Dec</span><span class="day-title">Christmas Eve in Tokyo</span></div>
+        <ul class="day-items">
+          <li>Check in, drop bags — back at 9h Akasaka, same neighbourhood, same energy</li>
+          <li><strong>KFC Christmas dinner</strong> — yes, it's a genuine Japanese tradition. Book the set meal in advance or grab walk-in buckets on the night.</li>
+          <li>Christmas illuminations: <strong>Roppongi Hills</strong>, <strong>Tokyo Midtown</strong>, <strong>Marunouchi</strong> — the entire city is dressed up. Nothing like Christmas in Brisbane.</li>
+          <li>Christmas Eve in Japan is a romantic couples' celebration — the streets are warm, busy, and magical</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Days 9–10</span><span class="day-date">25–26 Dec</span><span class="day-title">Christmas & Boxing Day — The Hit List</span></div>
+        <div style="font-size:13px;color:var(--text-2);padding:6px 0 12px 0;font-style:italic">Non-exhaustive — and anything not covered in Tokyo Phase 1 rolls straight into here. Order TBC.</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--sg-l);padding-bottom:8px">The big one — Christmas Day</div>
+        <ul class="day-items" style="margin-bottom:16px">
+          <li style="color:var(--sg-l)"><strong>Japan does not shut down for Christmas. Every restaurant, shop, and bar is open.</strong> This is the Christmas you've always deserved.</li>
+          <li>🎨 <strong>TeamLab Borderless</strong> — newly reopened in Azabudai Hills, immersive digital art on a massive scale. Book ahead.</li>
+          <li>♨️ <strong>Onsen day spa</strong> — soak the legs. After 8 days of walking, you've earned it.</li>
+          <li>🍳 <strong>Kewpie Mayo Factory tour</strong> — free, fascinating, and very Japanese. Needs to be booked well in advance.</li>
+        </ul>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);padding-bottom:8px">Also worth considering</div>
+        <ul class="day-items">
+          <li>🛍️ <strong>Shibuya 109 + Isetan Shinjuku</strong> — final shopping assault before Hakuba. Isetan's basement food hall (depachika) is the finest curated food in Japan under one roof.</li>
+          <li>🍜 <strong>Ichiran ramen</strong> — solo booths, rich tonkotsu broth. The perfect pre-Hakuba carb load.</li>
+          <li>🏘️ <strong>Yanaka</strong> — old shitamachi neighbourhood, temples, cats, tiny galleries. Like stepping back 60 years.</li>
+          <li>🌿 <strong>Shinjuku Gyoen</strong> — one of Tokyo's best gardens, peaceful and completely underrated in winter</li>
+          <li>⛰️ <strong>Mount Takao day hike</strong> — 1 hour from Shinjuku, easy trail, great views of Mt Fuji on a clear day</li>
+          <li>🐱 <strong>Cat café</strong> — exactly what it sounds like.</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Day 11</span><span class="day-date">Sun 27 Dec</span><span class="day-title">Hakuba Transfer Day</span></div>
+        <ul class="day-items">
+          <li>Check out of 9h Akasaka, coach departs <strong>Shinjuku Station</strong> for Hakuba (~5 hours)</li>
+          <li>Arrive Echoland, Hakuba village, mid-afternoon</li>
+          <li>Check in to <strong>Monkey Rider Lodge</strong> — your home for 7 nights</li>
+          <li>Collect snowboard/ski gear from <strong>Central Snowsports Hakuba</strong> (4 stores in the village)</li>
+          <li>Dinner at Echoland. First mountain meal. Tomorrow, you shred.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 4: Hakuba -->
+  <div class="phase ph-hakuba">
+    <div class="phase-header" onclick="toggle(this)">
+      <div class="phase-icon">🏔️</div>
+      <div class="phase-meta">
+        <div class="phase-title">Hakuba</div>
+        <div class="phase-sub">The Japanese Alps — World's Best Powder</div>
+      </div>
+      <div class="phase-dates">
+        <div class="phase-nights">7 nights</div>
+        <div class="phase-date-str">27 Dec – 3 January</div>
+        <div class="phase-chevron" style="text-align:right;margin-top:8px">▾</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-accom">
+        <span style="font-size:20px">🏠</span>
+        <div>
+          <strong>Monkey Rider Lodge, Echoland — Hakuba valley</strong>
+          <br><span>~7 Pay 6 offer (book by 1 Jun) · Breakfast included · Free shuttle stop outside the door · Bar + lounge + shared kitchen onsite · 150m from Hakuba base camp · Jerry has stayed here before — can vouch for it completely</span>
+        </div>
+      </div>
+
+      <!-- Hakuba stats -->
+      <div class="feature-box" style="margin-bottom:20px">
+        <h3>The Hakuba Valley by the numbers</h3>
+        <p>Hosted the alpine events at the 1998 Winter Olympics. 10 interconnected resorts, one valley liftpass. Japan's powder is legendary — light, dry, and deep. You will understand on Day 1.</p>
+        <div class="stats-row">
+          <div class="ski-stat"><div class="ski-stat-num">11m</div><div class="ski-stat-lbl">Average annual snowfall</div></div>
+          <div class="ski-stat"><div class="ski-stat-num">10</div><div class="ski-stat-lbl">Resorts on one pass</div></div>
+          <div class="ski-stat"><div class="ski-stat-num">137</div><div class="ski-stat-lbl">Runs across the valley</div></div>
+        </div>
+      </div>
+
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Day 12</span><span class="day-date">Sun 28 Dec</span><span class="day-title">First Tracks</span></div>
+        <ul class="day-items">
+          <li><strong>Hakuba Valley Liftpass</strong> activates — valid at Happo-One, Hakuba47, Goryu, Tsugaike, Norikura, Cortina, Jiigatake, Kashimayari and Sanosaka</li>
+          <li>Start at <strong>Happo-One</strong> — Japan's most famous resort. 13 lifts. Big mountain energy.</li>
+          <li>Jerry as your on-mountain guide — knows the lines, knows the secret runs</li>
+          <li>Après-ski back at the Monkey Rider bar. The trip has truly begun.</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Day 13</span><span class="day-date">Mon 29 Dec</span><span class="day-title">Hakuba 47 & Goryu</span></div>
+        <ul class="day-items">
+          <li><strong>Hakuba47 + Goryu</strong> — interconnected resorts, 37 runs combined, terrain park for those who like sending it</li>
+          <li>Mountain ramen at the lodge mid-mountain. Non-negotiable.</li>
+          <li>Complimentary 2-hour guided orientation (Monkey Rider perk)</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Day 14</span><span class="day-date">Tue 30 Dec</span><span class="day-title">Tsugaike Kogen</span></div>
+        <ul class="day-items">
+          <li><strong>Tsugaike</strong> — massive resort, fewer crowds, incredible powder fields off-piste</li>
+          <li>Long groomed runs for those who want speed, backcountry for those who want powder</li>
+          <li>🍔 <strong>Burger King at the gondola mid-station</strong> — yes, a full Burger King, famously out of place, right there on the mountain. Lunch sorted.</li>
+          <li>Mimizuku Onsen in the evening (5 min by car) — wood-fired bath, traditional experience</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Day 15</span><span class="day-date">Wed 31 Dec</span><span class="day-title">New Year's Eve in the Alps</span></div>
+        <ul class="day-items">
+          <li>Morning session — one last lap before the party starts</li>
+          <li><strong>NYE in Echoland</strong> — Hakuba's village hub goes absolutely off. Multiple bars and clubs, all packed, all buzzing from dusk until well into the new year</li>
+          <li>Hakuba has a massive, loyal Australian following — the NYE crowd is a brilliant mix of Aussie travellers, Japanese locals, and like-minded people from around the world who all made the same great decision you did</li>
+          <li>The energy is unlike anything back home — people who love mountains, love snow, love adventure, and love a good time. Your people.</li>
+          <li>Ringing in 2027 surrounded by the Japanese Alps, powder under your feet, your best friends beside you — this is what it's all about</li>
+          <li style="color:var(--ic-l)"><strong>There is no better place on earth to see in the New Year. Full stop.</strong></li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Day 16</span><span class="day-date">Thu 1 Jan 2027</span><span class="day-title">Happy New Year — Rest Day</span></div>
+        <ul class="day-items">
+          <li>Hatsumode — optional first shrine visit of the New Year. A genuinely moving Japanese tradition.</li>
+          <li>Rest day. The mountain will still be there. Your legs need this.</li>
+          <li><strong>Mimizuku Onsen</strong> — soak, recover, reflect. Japan's public hot spring culture is a gift.</li>
+          <li>Shared dinner at Monkey Rider — the lodge comes alive on New Year's evening</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Day 17</span><span class="day-date">Fri 2 Jan</span><span class="day-title">Final Shred</span></div>
+        <ul class="day-items">
+          <li>Last full day on the mountain — make every run count</li>
+          <li>Return to Happo-One for a farewell lap of the best terrain in the valley</li>
+          <li>Return rental equipment to Central Snowsports by close of play</li>
+          <li>One final Echoland dinner and early night — big travel day tomorrow</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">Day 18</span><span class="day-date">Sat 3 Jan</span><span class="day-title">Homeward Bound</span></div>
+        <ul class="day-items">
+          <li>Check out of Monkey Rider. What a week.</li>
+          <li>Coach from Hakuba to Narita Airport (~5.5 hours)</li>
+          <li>Last conveyor-belt sushi at Narita Terminal 3 — go hard, it'll be months before you get more</li>
+          <li>JQ26 departs NRT 8:10pm · Boeing 787 Dreamliner · Arrives Cairns 4:35am Sun 4 Jan</li>
+          <li>JQ893 Cairns 9:45am → Gold Coast 12:00pm. Home by 1pm. Already planning the return trip.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COSTS -->
+<div class="section">
+  <div class="section-title">What it costs — per person</div>
+  <table class="cost-table">
+    <thead>
+      <tr>
+        <th style="width:44px"></th>
+        <th>Item</th>
+        <th style="width:140px;text-align:right">Budget (AUD)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="item-icon">✈️</td>
+        <td><div class="item-name">Flights — Jetstar OOL–Cairns–NRT return</div><div class="item-note">Same routing as Jerry & Sara. Book now on jetstar.com before prices rise further. Similar dates also available if 17 Dec doesn't work.</div></td>
+        <td style="text-align:right"><div class="item-amt">~$2,200</div></td>
+      </tr>
+      <tr>
+        <td class="item-icon">🏨</td>
+        <td><div class="item-name">Accommodation — Pre-Hakuba (10 nights)</div><div class="item-note">9h Capsule Hotel Akasaka, Tokyo (7 nights) + central Osaka budget hotel (3 nights) at ~$60pp/night.</div></td>
+        <td style="text-align:right"><div class="item-amt">~$600</div></td>
+      </tr>
+      <tr>
+        <td class="item-icon">⛷️</td>
+        <td><div class="item-name">Hakuba Package — 7 nights + lifts + gear rental</div><div class="item-note">Monkey Rider Lodge, Echoland (B&amp;B) · 6-of-11-day Hakuba Valley Liftpass (all 10 resorts) · 6-day snowboard or ski package. Book via MountainWatch Travel. Nomad Hakuba quoted $2,083pp — Monkey Rider will be slightly less.</div></td>
+        <td style="text-align:right"><div class="item-amt">~$2,000</div></td>
+      </tr>
+      <tr>
+        <td class="item-icon">🚅</td>
+        <td><div class="item-name">Shinkansen — Tokyo→Osaka + Osaka→Tokyo</div><div class="item-note">Nozomi bullet train, 2h 21min each way. ¥14,720 (~$135 AUD) per leg. Book at klook.com or at the station.</div></td>
+        <td style="text-align:right"><div class="item-amt">~$270</div></td>
+      </tr>
+      <tr>
+        <td class="item-icon">🛡️</td>
+        <td><div class="item-name">Travel insurance — with snow sports cover</div><div class="item-note"><strong>Critical:</strong> standard travel insurance does NOT cover skiing or snowboarding. You need Level 3 adventure sports add-on. Recommended: World Nomads Explorer plan + snow sports Level 3. Cover-More also solid. Budget ~$280pp for a 19-day Japan policy with ski cover.</div></td>
+        <td style="text-align:right"><div class="item-amt">~$280</div></td>
+      </tr>
+      <tr>
+        <td class="item-icon">🍜</td>
+        <td><div class="item-name">Food — 18 days</div><div class="item-note">Japan is outrageously affordable. Ramen ¥1,000 (~$9), sushi breakfast ¥1,500 (~$14), convenience store meals under $5. Budget $45/day and you'll eat exceptionally well the entire trip.</div></td>
+        <td style="text-align:right"><div class="item-amt">~$810</div></td>
+      </tr>
+      <tr>
+        <td class="item-icon">🚇</td>
+        <td><div class="item-name">IC card + city transport</div><div class="item-note">Suica or Pasmo card for Tokyo and Osaka metro. Top up at any convenience store. Narita Express to Shinjuku ~$37 AUD. Budget liberally for ease.</div></td>
+        <td style="text-align:right"><div class="item-amt">~$100</div></td>
+      </tr>
+      <tr>
+        <td class="item-icon">🎫</td>
+        <td><div class="item-name">Activities — TeamLab, Kyoto day trip, onsen etc.</div><div class="item-note">TeamLab Planets ~$40. TeamLab Borderless ~$45. Fushimi Inari free. Senso-ji free. Onsen day spa ~$30. Tokyo Skytree ~$25. Budget generously — the paid experiences are worth every yen.</div></td>
+        <td style="text-align:right"><div class="item-amt">~$300</div></td>
+      </tr>
+      <tr>
+        <td class="item-icon">👜</td>
+        <td><div class="item-name">Shopping</div><div class="item-note">Entirely at your discretion. Osaka's Shinsaibashi, Tokyo's Shibuya 109, Harajuku, and the depachika basement food halls of Isetan Shinjuku will test your self-control. Hakuba village has brilliant ski gear at great prices. You've been warned.</div></td>
+        <td style="text-align:right"><div class="item-amt">¯\_(ツ)_/¯</div></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr class="cost-total">
+        <td></td>
+        <td><div class="item-name">Total estimate per person</div><div class="item-note">Flights + Hakuba package + accommodation + Shinkansen + insurance + food + activities. Excludes shopping.</div></td>
+        <td style="text-align:right"><div class="item-amt">~$6,560</div></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<!-- INSURANCE -->
+<div class="section">
+  <div class="section-title">Important — travel insurance</div>
+  <div class="insurance-box">
+    <div class="ins-icon">⚠️</div>
+    <div>
+      <div class="ins-title">You must add snow sports cover — it's not automatic</div>
+      <div class="ins-body">
+        Standard travel insurance <strong>does not cover skiing or snowboarding</strong>. In Japan, a single ski injury can run $15,000+ AUD out of pocket. Don't risk it.<br><br>
+        First port of call: <strong>ask MountainWatch when you book the Hakuba package</strong> — they know exactly what cover you need. Otherwise, World Nomads Explorer + Level 3 snow sports add-on is the go. Cover-More is a solid alternative. Budget <strong>~$280pp</strong> and consider it done.
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end max-width wrapper -->
+
+<!-- BOOK NOW -->
+<div class="book-section" style="background:var(--bg-2);border-top:1px solid var(--border)">
+  <h2>Are you <span>in?</span></h2>
+  <p>Jerry and Sara are already booked. Flights are available now on the same dates. December peak season pricing moves fast — the longer you wait, the more it costs.</p>
+  <a class="book-btn" href="https://www.jetstar.com" target="_blank">Book flights on Jetstar →</a>
+  <div class="book-ref" style="margin-top:16px">Then lock in Hakuba via <strong>MountainWatch Travel</strong> · Insurance via <strong>worldnomads.com</strong></div>
+  <div class="book-ref" style="margin-top:12px;color:var(--text-3)">Questions? Ask Jerry. He's done this 5 times. Twice in Hakuba.</div>
+</div>
+
+<footer>
+  Japan · December 2026 – January 2027 · Prepared with love, from Jerry & Sara
+</footer>
+
+<script>
+function toggle(header) {
+  header.classList.toggle('open');
+  const body = header.nextElementSibling;
+  body.classList.toggle('open');
+}
+
+// Snow
+const wrap = document.getElementById('snow');
+const flakes = ['❄', '❅', '❆'];
+for (let i = 0; i < 32; i++) {
+  const f = document.createElement('span');
+  f.className = 'flake';
+  f.textContent = flakes[Math.floor(Math.random() * flakes.length)];
+  const sz = Math.random() * 14 + 8;
+  f.style.cssText = `
+    left: ${Math.random() * 100}%;
+    font-size: ${sz}px;
+    opacity: ${Math.random() * 0.35 + 0.1};
+    animation-duration: ${Math.random() * 10 + 8}s;
+    animation-delay: ${Math.random() * 10}s;
+  `;
+  wrap.appendChild(f);
+}
+</script>
+</body>
+</html>
