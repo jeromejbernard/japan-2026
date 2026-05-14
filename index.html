@@ -186,63 +186,91 @@ footer { text-align: center; padding: 32px; font-size: 16px; color: var(--text-3
   .stats-row { grid-template-columns: 1fr; }
   .highlights-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 72px; }
-  .section { padding: 48px 24px; }
-  .phase-header { min-height: 72px; }
+  .section { padding: 40px 20px; }
+  .phase-header { min-height: 68px; }
+  /* Cost table — hide icon column entirely and allow amount to wrap */
+  .cost-table td:first-child,
+  .cost-table th:first-child { display: none; }
+  .cost-table .item-icon { display: none; }
+  .cost-table .item-amt { white-space: normal; font-size: 18px; }
+  .cost-total .item-amt { font-size: 22px; white-space: normal; }
+  .cost-total .item-name { font-size: 17px; }
 }
 
 /* FLIGHT CARD — stack legs vertically on mobile */
 @media (max-width: 700px) {
-  .flight-leg { flex-direction: column; align-items: flex-start; gap: 6px; padding: 16px 0; }
+  .flight-leg { flex-direction: column; align-items: flex-start; gap: 5px; padding: 14px 0; }
   .fl-arrow { display: none; }
   .fl-dest { text-align: left !important; }
-  .fl-time { font-size: 22px; min-width: auto; }
-  .fl-airport { font-size: 17px; }
-  .fl-detail { font-size: 15px; }
-  .flight-card { padding: 20px; }
+  .fl-time { font-size: 20px; min-width: auto; }
+  .fl-airport { font-size: 16px; }
+  .fl-detail { font-size: 14px; }
+  .flight-card { padding: 18px; }
+  .fc-direction { font-size: 12px; padding: 12px 0 4px; }
 }
 
 /* RESPONSIVE — 480px (small phones, FB in-app browser) */
 @media (max-width: 480px) {
-  .hero { padding: 40px 16px; min-height: 400px; }
-  .hero-tagline { font-size: 17px; }
+  .hero { padding: 36px 16px 48px; min-height: 420px; }
+  .hero-badge { font-size: 11px; padding: 5px 12px; }
+  .hero-dates { font-size: 16px; }
+  .hero-tagline { font-size: 15px; line-height: 1.6; margin-top: 20px; padding-top: 16px; }
+  .hero-names { gap: 10px; }
+  .hero-name { font-size: 13px; padding: 4px 10px; }
   .stats { grid-template-columns: 1fr 1fr; }
-  .stat { padding: 18px 14px; }
-  .stat-num { font-size: 28px; }
-  .stat-lbl { font-size: 15px; }
-  .phase-header { padding: 16px; gap: 12px; min-height: 72px; }
-  .phase-icon { width: 44px; height: 44px; font-size: 20px; }
-  .phase-title { font-size: 22px; }
-  .phase-sub { font-size: 13px; letter-spacing: 0.06em; }
+  .stat { padding: 16px 12px; }
+  .stat-num { font-size: 26px; }
+  .stat-lbl { font-size: 13px; letter-spacing: 0.06em; }
+  .phase-header { padding: 14px 16px; gap: 10px; min-height: 64px; }
+  .phase-icon { width: 42px; height: 42px; font-size: 18px; }
+  .phase-title { font-size: 20px; }
+  .phase-sub { font-size: 12px; letter-spacing: 0.05em; }
+  .phase-nights { font-size: 11px; padding: 3px 8px; }
   .phase-date-str { display: none; }
-  .phase-body { padding: 0 16px 24px; }
-  .phase-body.open { padding-top: 18px; }
-  .day-items { padding-left: 28px; }
-  .day-items li { font-size: 17px; }
-  .day-title { font-size: 19px; }
-  .cost-table .item-icon { display: none; }
-  .cost-table th:first-child { display: none; }
-  .cost-table td { padding: 12px; font-size: 17px; }
-  .cost-table .item-note { font-size: 15px; }
-  .cost-table .item-amt { font-size: 20px; }
-  .cost-total .item-amt { font-size: 24px; }
-  .feature-box { padding: 20px; }
-  .insurance-box { grid-template-columns: 1fr; gap: 12px; }
+  .phase-chevron { font-size: 16px; }
+  .phase-body { padding: 0 14px 20px; }
+  .phase-body.open { padding-top: 16px; }
+  .phase-accom { padding: 12px; font-size: 14px; }
+  .day-header { gap: 10px; padding: 10px 0 6px; }
+  .day-num { min-width: 44px; font-size: 11px; }
+  .day-date { font-size: 11px; }
+  .day-title { font-size: 17px; }
+  .day-items { padding-left: 24px; }
+  .day-items li { font-size: 15px; line-height: 1.65; padding: 4px 0; }
+  .day-items li::before { left: -16px; }
+  .cost-table td { padding: 10px 12px; font-size: 15px; }
+  .cost-table th { padding: 8px 12px; font-size: 12px; }
+  .cost-table .item-note { font-size: 13px; }
+  .cost-table .item-amt { font-size: 17px; }
+  .cost-total .item-amt { font-size: 20px; }
+  .cost-total .item-name { font-size: 16px; }
+  .feature-box { padding: 18px; }
+  .feature-box h3 { font-size: 22px; }
+  .feature-box p { font-size: 15px; }
+  .ski-stat-num { font-size: 28px; }
+  .ski-stat-lbl { font-size: 13px; }
+  .insurance-box { grid-template-columns: 1fr; gap: 10px; padding: 18px; }
   .ins-icon { display: none; }
-  .ins-title { font-size: 19px; }
-  .ins-body { font-size: 17px; }
-  .book-section { padding: 40px 16px; }
-  .book-section h2 { font-size: 34px; }
-  .book-section p { font-size: 17px; }
-  .book-btn { padding: 16px 32px; font-size: 17px; }
+  .ins-title { font-size: 18px; }
+  .ins-body { font-size: 15px; }
+  .book-section { padding: 36px 16px; }
+  .book-section h2 { font-size: 30px; }
+  .book-section p { font-size: 15px; }
+  .book-btn { padding: 15px 28px; font-size: 15px; display: block; text-align: center; }
+  .book-ref { font-size: 14px; }
+  footer { font-size: 13px; padding: 24px 16px; }
 }
 
 /* RESPONSIVE — 380px (very small phones) */
 @media (max-width: 380px) {
   .stats { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 60px; }
-  .section { padding: 36px 16px; }
-  .phase-header { padding: 14px; }
-  .phase-body { padding: 0 14px 20px; }
+  .hero h1 { font-size: 58px; }
+  .section { padding: 32px 14px; }
+  .phase-header { padding: 12px 14px; gap: 8px; }
+  .phase-body { padding: 0 12px 18px; }
+  .phase-title { font-size: 18px; }
+  .day-items { padding-left: 18px; }
+  .day-items li::before { left: -14px; }
 }
 </style>
 </head>
