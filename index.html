@@ -272,9 +272,39 @@ footer { text-align: center; padding: 32px; font-size: 16px; color: var(--text-3
   .day-items { padding-left: 18px; }
   .day-items li::before { left: -14px; }
 }
+/* COUNTDOWN WIDGET */
+.countdown-widget { position: fixed; top: 18px; right: 18px; background: rgba(6,10,20,0.92); border: 1px solid rgba(190,27,51,0.45); border-radius: 12px; padding: 10px 14px; z-index: 200; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); text-align: center; min-width: 150px; }
+.cd-label { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cr-l); margin-bottom: 7px; }
+.cd-timer { display: flex; align-items: flex-end; justify-content: center; gap: 3px; }
+.cd-unit { display: flex; flex-direction: column; align-items: center; min-width: 32px; }
+.cd-num { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--text); line-height: 1; }
+.cd-unit-lbl { font-size: 9px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: var(--text-3); margin-top: 3px; }
+.cd-sep { font-family: var(--serif); font-size: 18px; color: var(--text-3); padding-bottom: 10px; line-height: 1; }
+.cd-done { font-family: var(--serif); font-size: 15px; font-style: italic; color: var(--am-l); }
+@media (max-width: 480px) {
+  .countdown-widget { top: 12px; right: 12px; padding: 8px 10px; min-width: 130px; border-radius: 10px; }
+  .cd-num { font-size: 18px; }
+  .cd-unit { min-width: 26px; }
+  .cd-sep { font-size: 15px; }
+  .cd-label { font-size: 9px; margin-bottom: 5px; }
+}
 </style>
 </head>
 <body>
+
+<!-- COUNTDOWN WIDGET -->
+<div class="countdown-widget" id="countdown-widget">
+  <div class="cd-label">✈ takeoff in</div>
+  <div class="cd-timer">
+    <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-unit-lbl">days</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span class="cd-num" id="cd-hrs">--</span><span class="cd-unit-lbl">hrs</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span class="cd-num" id="cd-min">--</span><span class="cd-unit-lbl">min</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span class="cd-num" id="cd-sec">--</span><span class="cd-unit-lbl">sec</span></div>
+  </div>
+</div>
 
 <!-- HERO -->
 <header class="hero">
@@ -900,6 +930,28 @@ footer { text-align: center; padding: 32px; font-size: 16px; color: var(--text-3
 </footer>
 
 <script>
+// Countdown timer — Gold Coast departure 17 Dec 2026 6:40am AEST
+function updateCountdown() {
+  const target = new Date('2026-12-17T06:40:00+10:00');
+  const now = new Date();
+  const diff = target - now;
+  if (diff <= 0) {
+    document.getElementById('countdown-widget').innerHTML = '<div class="cd-label">🛫 wheels up!</div><div class="cd-done">Have the best time</div>';
+    return;
+  }
+  const days = Math.floor(diff / 86400000);
+  const hrs  = Math.floor((diff % 86400000) / 3600000);
+  const min  = Math.floor((diff % 3600000) / 60000);
+  const sec  = Math.floor((diff % 60000) / 1000);
+  const pad  = n => String(n).padStart(2, '0');
+  document.getElementById('cd-days').textContent = pad(days);
+  document.getElementById('cd-hrs').textContent  = pad(hrs);
+  document.getElementById('cd-min').textContent  = pad(min);
+  document.getElementById('cd-sec').textContent  = pad(sec);
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
 function toggle(header) {
   header.classList.toggle('open');
   const body = header.nextElementSibling;
