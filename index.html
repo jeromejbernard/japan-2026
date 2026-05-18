@@ -281,6 +281,38 @@ footer { text-align: center; padding: 32px; font-size: 16px; color: var(--text-3
 .cd-unit-lbl { font-size: 9px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: var(--text-3); margin-top: 3px; }
 .cd-sep { font-family: var(--serif); font-size: 18px; color: var(--text-3); padding-bottom: 10px; line-height: 1; }
 .cd-done { font-family: var(--serif); font-size: 15px; font-style: italic; color: var(--am-l); }
+
+/* OPTION WRAPPERS */
+.options-wrap { max-width: 1200px; margin: 0 auto; padding: 40px 5% 0; }
+.options-intro { text-align: center; font-size: 15px; color: var(--text-3); letter-spacing: 0.05em; margin-bottom: 28px; }
+.option { border-radius: var(--r); border: 1px solid var(--border); overflow: hidden; margin-bottom: 24px; }
+.opt-1 { border-color: rgba(200,148,37,0.35); }
+.opt-2 { border-color: rgba(37,99,168,0.35); }
+.option-header { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 20px; padding: 28px 32px; cursor: pointer; -webkit-user-select: none; user-select: none; touch-action: manipulation; -webkit-tap-highlight-color: transparent; transition: background 0.2s; }
+.opt-1 .option-header { background: rgba(200,148,37,0.07); }
+.opt-2 .option-header { background: rgba(37,99,168,0.07); }
+.option-header:hover { filter: brightness(1.08); }
+.option-num { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-3); margin-bottom: 6px; }
+.option-title { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--text); line-height: 1.1; }
+.option-dests { font-size: 15px; color: var(--text-2); margin-top: 7px; }
+.option-price { font-family: var(--serif); font-size: 28px; font-weight: 700; line-height: 1; }
+.opt-1 .option-price { color: var(--gold); }
+.opt-2 .option-price { color: var(--ic-l); }
+.option-pp { font-family: var(--sans); font-size: 15px; font-weight: 500; }
+.option-days { font-size: 13px; color: var(--text-3); margin-top: 5px; text-align: right; }
+.option-chevron { font-size: 20px; color: var(--text-3); margin-top: 10px; text-align: right; transition: transform 0.3s; }
+.option-header.open .option-chevron { transform: rotate(180deg); }
+.option-body { display: none; border-top: 1px solid var(--border); }
+.option-body.open { display: block; }
+@media (max-width: 600px) {
+  .options-wrap { padding: 24px 16px 0; }
+  .option-header { padding: 18px 16px; gap: 12px; }
+  .option-title { font-size: 18px; }
+  .option-dests { font-size: 13px; }
+  .option-price { font-size: 22px; }
+  .option-days { font-size: 12px; }
+  .option-num { font-size: 10px; }
+}
 @media (max-width: 480px) {
   .countdown-widget { top: 12px; right: 12px; padding: 8px 10px; min-width: 130px; border-radius: 10px; }
   .cd-num { font-size: 18px; }
@@ -403,7 +435,26 @@ footer { text-align: center; padding: 32px; font-size: 16px; color: var(--text-3
   <div class="stat"><div class="stat-num">~$6.5k</div><div class="stat-lbl">pp — fully inclusive, start to finish</div><div style="font-size:15px;color:var(--text-3);margin-top:4px;text-transform:none;letter-spacing:0">Flights · hotels · ski pass · food · transport · insurance</div></div>
 </div>
 
-<div style="max-width:1200px;margin:0 auto">
+<!-- OPTIONS -->
+<div class="options-wrap">
+  <p class="options-intro">↓ Two trip options below — expand to compare and choose</p>
+
+  <!-- OPTION 1 -->
+  <div class="option opt-1" id="option1">
+    <div class="option-header" onclick="selectOption('option1')">
+      <div>
+        <div class="option-num">Option 1</div>
+        <div class="option-title">The Full Experience</div>
+        <div class="option-dests">Tokyo · Osaka · Nara · Kyoto · Hakuba</div>
+      </div>
+      <div style="text-align:right">
+        <div class="option-price">~$6,530<span class="option-pp"> pp</span></div>
+        <div class="option-days">19 days · 17 Dec – 4 Jan</div>
+        <div class="option-chevron">▾</div>
+      </div>
+    </div>
+    <div class="option-body">
+
 
 <!-- FLIGHTS -->
 <div class="section">
@@ -865,24 +916,16 @@ footer { text-align: center; padding: 32px; font-size: 16px; color: var(--text-3
       </tr>
       <tr>
         <td class="item-icon">🛡️</td>
-        <td><div class="item-name">Travel insurance — with snow sports cover</div><div class="item-note"><strong>Critical:</strong> standard travel insurance does NOT cover skiing or snowboarding. You need Level 3 adventure sports add-on. Recommended: World Nomads Explorer plan + snow sports Level 3. Cover-More also solid. Budget ~$280pp for a 19-day Japan policy with ski cover.</div></td>
-        <td style="text-align:right"><div class="item-amt">~$280</div></td>
+        <td><div class="item-name">Travel insurance — FastCover Snow Sports Plus</div><div class="item-note">Australia's dedicated ski/snowboard policy. Covers recreational skiing and snowboarding, on-piste and off-piste (with instructor). Budget ~$250pp for a 19-day Japan Snow Sports Plus policy. Must be 69 or under at time of purchase.</div></td>
+        <td style="text-align:right"><div class="item-amt">~$250</div></td>
       </tr>
       <tr>
         <td class="item-icon">🍜</td>
         <td><div class="item-name">Food — 18 days</div><div class="item-note">Japan is outrageously affordable. Ramen ¥1,000 (~$9), sushi breakfast ¥1,500 (~$14), convenience store meals under $5. Budget $45/day and you'll eat exceptionally well the entire trip.</div></td>
         <td style="text-align:right"><div class="item-amt">~$810</div></td>
       </tr>
-      <tr>
-        <td class="item-icon">🚇</td>
-        <td><div class="item-name">IC card + city transport</div><div class="item-note">Suica or Pasmo card for Tokyo and Osaka metro. Top up at any convenience store. Narita Express to Shinjuku ~$37 AUD. Budget liberally for ease.</div></td>
-        <td style="text-align:right"><div class="item-amt">~$100</div></td>
-      </tr>
-      <tr>
-        <td class="item-icon">🎫</td>
-        <td><div class="item-name">Activities — TeamLab, Kyoto day trip, onsen etc.</div><div class="item-note">TeamLab Planets ~$40. TeamLab Borderless ~$45. Fushimi Inari free. Senso-ji free. Onsen day spa ~$30. Tokyo Skytree ~$25. Budget generously — the paid experiences are worth every yen.</div></td>
-        <td style="text-align:right"><div class="item-amt">~$300</div></td>
-      </tr>
+      <tr><td class="item-icon">🚇</td><td><div class="item-name">IC card + city transport</div><div class="item-note">Suica or Pasmo card for Tokyo and Osaka metro. Top up at any convenience store. Narita Express to Shinjuku ~$37 AUD. Budget liberally for ease.</div></td><td style="text-align:right"><div class="item-amt">~$150</div></td></tr>
+      <tr><td class="item-icon">🎫</td><td><div class="item-name">Activities — TeamLab, Kyoto day trip, onsen etc.</div><div class="item-note">TeamLab Planets ~$40. TeamLab Borderless ~$45. Fushimi Inari free. Senso-ji free. Onsen day spa ~$30. Tokyo Skytree ~$25. Budget generously — the paid experiences are worth every yen.</div></td><td style="text-align:right"><div class="item-amt">~$250</div></td></tr>
       <tr>
         <td class="item-icon">👜</td>
         <td><div class="item-name">Shopping</div><div class="item-note">Entirely at your discretion. Osaka's Shinsaibashi, Tokyo's Shibuya 109, Harajuku, and the depachika basement food halls of Isetan Shinjuku will test your self-control. Hakuba village has brilliant ski gear at great prices. You've been warned.</div></td>
@@ -893,7 +936,7 @@ footer { text-align: center; padding: 32px; font-size: 16px; color: var(--text-3
       <tr class="cost-total">
         <td></td>
         <td><div class="item-name">Total estimate per person</div><div class="item-note">Flights + Hakuba package + accommodation + Shinkansen + insurance + food + activities. Excludes shopping.</div></td>
-        <td style="text-align:right"><div class="item-amt">~$6,560</div></td>
+        <td style="text-align:right"><div class="item-amt">~$6,530</div></td>
       </tr>
     </tfoot>
   </table>
@@ -905,28 +948,281 @@ footer { text-align: center; padding: 32px; font-size: 16px; color: var(--text-3
   <div class="insurance-box">
     <div class="ins-icon">⚠️</div>
     <div>
-      <div class="ins-title">You must add snow sports cover — it's not automatic</div>
+      <div class="ins-title">Get FastCover's Snow Sports Plus policy — standard cover won't cut it</div>
       <div class="ins-body">
         Standard travel insurance <strong>does not cover skiing or snowboarding</strong>. In Japan, a single ski injury can run $15,000+ AUD out of pocket. Don't risk it.<br><br>
-        First port of call: <strong>ask MountainWatch when you book the Hakuba package</strong> — they know exactly what cover you need. Otherwise, World Nomads Explorer + Level 3 snow sports add-on is the go. Cover-More is a solid alternative. Budget <strong>~$280pp</strong> and consider it done.
+        <strong>FastCover Snow Sports Plus</strong> is an Australian-built policy purpose-made for ski and snowboard trips. It covers recreational skiing and snowboarding, on-piste and off-piste (with a professional instructor), snowmobiling, and emergency mountain evacuation. Over 24,000 ProductReview ratings averaging 4.6 stars — claims are typically settled within 24–72 hours.<br><br>
+        First port of call: <strong>ask MountainWatch when you book the Hakuba package</strong> — they deal with this regularly. Otherwise go direct at <strong>fastcover.com.au</strong>. Budget <strong>~$250pp</strong> for the 19-day trip. Must be aged 69 or under at time of purchase.
       </div>
     </div>
   </div>
 </div>
 
-</div><!-- end max-width wrapper -->
 
-<!-- BOOK NOW -->
+<!-- BOOK NOW — Option 1 -->
 <div class="book-section" style="background:var(--bg-2);border-top:1px solid var(--border)">
   <h2>Are you <span>in?</span></h2>
   <p>Jerry and Sara are already booked. Flights are available now on the same dates. December peak season pricing moves fast — the longer you wait, the more it costs.</p>
   <a class="book-btn" href="https://www.jetstar.com" target="_blank">Book flights on Jetstar →</a>
-  <div class="book-ref" style="margin-top:16px">Then lock in Hakuba via <strong>MountainWatch Travel</strong> · Insurance via <strong>worldnomads.com</strong></div>
+  <div class="book-ref" style="margin-top:16px">Then lock in Hakuba via <strong><a href="https://mountainwatch.travel/japan/hakuba/" target="_blank" style="color:var(--am-l);text-decoration:none">MountainWatch Travel</a></strong> · Insurance via <strong><a href="https://fastcover.com.au/travel-insurance-for-skiing-and-snowboarding" target="_blank" style="color:var(--am-l);text-decoration:none">FastCover Snow Sports Plus</a></strong></div>
   <div class="book-ref" style="margin-top:12px;color:var(--text-3)">Questions? Ask Jerry. He's done this 5 times. Twice in Hakuba.</div>
 </div>
 
+    </div><!-- end option-body 1 -->
+  </div><!-- end option 1 -->
+
+  <!-- OPTION 2 -->
+  <div class="option opt-2" id="option2">
+    <div class="option-header" onclick="selectOption('option2')">
+      <div>
+        <div class="option-num">Option 2</div>
+        <div class="option-title">Budget-Friendly</div>
+        <div class="option-dests">Tokyo · Hakuba</div>
+      </div>
+      <div style="text-align:right">
+        <div class="option-price">~$5,300<span class="option-pp"> pp</span></div>
+        <div class="option-days">12 days · 24 Dec – 4 Jan</div>
+        <div class="option-chevron">▾</div>
+      </div>
+    </div>
+    <div class="option-body">
+
+<!-- OPTION 2: FLIGHTS -->
+<div class="section">
+  <div class="section-title">Getting there</div>
+  <div class="flights-grid" style="grid-template-columns:1fr">
+    <div class="flight-card urgent">
+      <div class="fc-head">
+        <div>
+          <div class="fc-tag tag-urgent">⚡ Book now — prices rising fast</div>
+          <div style="margin-top:10px;font-family:var(--serif);font-size:22px;font-weight:700;color:var(--cr-l)">Drew &amp; Prue</div>
+        </div>
+      </div>
+      <div class="fc-direction">✈ Outbound — Thu 24 Dec</div>
+      <div class="flight-leg">
+        <div class="fl-time">6:40</div>
+        <div style="flex:1"><div class="fl-airport">Gold Coast (OOL)</div><div class="fl-detail">Jetstar JQ892 · A320 · Thu 24 Dec</div></div>
+        <div class="fl-arrow">→</div>
+        <div class="fl-dest" style="text-align:right"><div class="fl-airport">Cairns (CNS)</div><div class="fl-detail">9:05am</div></div>
+      </div>
+      <div class="flight-leg">
+        <div class="fl-time">11:55</div>
+        <div style="flex:1"><div class="fl-airport">Cairns International</div><div class="fl-detail">Jetstar JQ25 · 787 Dreamliner · Thu 24 Dec</div></div>
+        <div class="fl-arrow">→</div>
+        <div class="fl-dest" style="text-align:right"><div class="fl-airport">Tokyo Narita (NRT)</div><div class="fl-detail">6:15pm · 7h 20m</div></div>
+      </div>
+      <div class="fc-direction">✈ Return — Sun 3 Jan</div>
+      <div class="flight-leg">
+        <div class="fl-time">20:10</div>
+        <div style="flex:1"><div class="fl-airport">Tokyo Narita (NRT)</div><div class="fl-detail">Jetstar JQ26 · Sun 3 Jan</div></div>
+        <div class="fl-arrow">→</div>
+        <div class="fl-dest" style="text-align:right"><div class="fl-airport">Cairns (CNS)</div><div class="fl-detail">4:35am Mon 4 Jan · 7h 25m</div></div>
+      </div>
+      <div class="flight-leg">
+        <div class="fl-time">9:45</div>
+        <div style="flex:1"><div class="fl-airport">Cairns (CNS)</div><div class="fl-detail">Jetstar JQ893 · A320 · Mon 4 Jan</div></div>
+        <div class="fl-arrow">→</div>
+        <div class="fl-dest" style="text-align:right"><div class="fl-airport">Gold Coast (OOL)</div><div class="fl-detail">12:00pm · 2h 15m</div></div>
+      </div>
+      <div class="urgent-note">⚠️ Same Jetstar routing as Jerry &amp; Sara — different outbound date. Check jetstar.com for Christmas Eve availability. Budget <strong>~$2,200pp return.</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- OPTION 2: ITINERARY -->
+<div class="section">
+  <div class="section-title">What's included</div>
+  <div style="font-size:15px;color:var(--text-3);margin-bottom:24px;text-align:center;letter-spacing:0.05em">↓ Click any section below to expand for more detail</div>
+
+  <!-- Tokyo Christmas -->
+  <div class="phase ph-tokyo2">
+    <div class="phase-header" onclick="toggle(this)">
+      <div class="phase-icon">🎄</div>
+      <div class="phase-meta">
+        <div class="phase-title">Tokyo</div>
+        <div class="phase-sub">Christmas in the City</div>
+      </div>
+      <div class="phase-dates">
+        <div class="phase-nights">3 nights</div>
+        <div class="phase-date-str">24 – 27 December</div>
+        <div class="phase-chevron" style="text-align:right;margin-top:8px">▾</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-accom">
+        <span style="font-size:20px">🏨</span>
+        <div><strong>9h Capsule Hotel Akasaka</strong><br><span>~$60pp/night · Gender-separated floors · Ultra-central Tokyo</span></div>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">24 Dec PM</span><span class="day-title">Christmas Eve Arrival</span></div>
+        <ul class="day-items">
+          <li>Land at Narita 6:15pm — N'EX to Shinjuku (~45 min, ~$37 AUD)</li>
+          <li>Check into 9h Capsule Hotel Akasaka</li>
+          <li><strong>KFC Christmas dinner</strong> — yes, it's a genuine Japanese tradition</li>
+          <li>Christmas illuminations: <strong>Roppongi Hills, Tokyo Midtown, Marunouchi</strong> — the entire city is dressed up</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">25–26 Dec</span><span class="day-title">Christmas & Boxing Day — The Hit List</span></div>
+        <div style="font-size:15px;color:var(--text-2);padding:6px 0 12px 0;font-style:italic">Non-exhaustive — order TBC. Any activities not covered roll into these days.</div>
+        <div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--cr-l);padding-bottom:8px">On the plan</div>
+        <ul class="day-items" style="margin-bottom:16px">
+          <li style="color:var(--sg-l)"><strong>Japan doesn't shut down for Christmas — everything is open.</strong></li>
+          <li>🎢 <strong>Tokyo Disneyland</strong> — book in advance, December fills fast</li>
+          <li>🌊 <strong>Tokyo DisneySea</strong> — a completely separate park, full day</li>
+          <li>🎮 <strong>Pokémon Centre</strong> — free entry, dangerous for the wallet</li>
+          <li>🏎️ <strong>Mario Kart through Tokyo</strong> — street go-karts in costume (Akiba Kart). Book ahead.</li>
+          <li>👘 <strong>Harajuku</strong> — Takeshita Street, Omotesando</li>
+          <li>🕹️ <strong>Akihabara</strong> — electronics, arcades, sensory overload</li>
+          <li>⛩️ <strong>Asakusa + Senso-ji</strong> — best before 8am</li>
+          <li>🍳 <strong>Kewpie Mayo Factory tour</strong> — free, book well in advance</li>
+        </ul>
+        <div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);padding-bottom:8px">Also worth considering</div>
+        <ul class="day-items">
+          <li>🎨 <strong>TeamLab Borderless</strong> — newly reopened in Azabudai Hills. Book ahead.</li>
+          <li>♨️ <strong>Onsen day spa</strong> — soak the legs. You've earned it.</li>
+          <li>🛍️ <strong>Shibuya 109 + Isetan Shinjuku</strong> — final shopping run before the mountains</li>
+          <li>🍜 <strong>Ichiran ramen</strong> — solo booths, rich tonkotsu broth. Perfect pre-Hakuba carb load.</li>
+          <li>🐱 <strong>Cat café</strong> — exactly what it sounds like.</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">27 Dec</span><span class="day-title">Hakuba Transfer Day</span></div>
+        <ul class="day-items">
+          <li>Check out of 9h Akasaka</li>
+          <li>Coach departs <strong>Shinjuku Station</strong> for Hakuba (~5 hours)</li>
+          <li>Arrive Echoland, check in to <strong>Monkey Rider Lodge</strong></li>
+          <li>Collect gear from <strong>Central Snowsports Hakuba</strong>. Dinner. Tomorrow you shred.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hakuba -->
+  <div class="phase ph-hakuba">
+    <div class="phase-header" onclick="toggle(this)">
+      <div class="phase-icon">🏔️</div>
+      <div class="phase-meta">
+        <div class="phase-title">Hakuba</div>
+        <div class="phase-sub">The Japanese Alps — World's Best Powder</div>
+      </div>
+      <div class="phase-dates">
+        <div class="phase-nights">7 nights</div>
+        <div class="phase-date-str">27 Dec – 3 January</div>
+        <div class="phase-chevron" style="text-align:right;margin-top:8px">▾</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-accom">
+        <span style="font-size:20px">🏠</span>
+        <div><strong>Monkey Rider Lodge, Echoland</strong><br><span>7 Pay 6 offer (book by 1 Jun) · Breakfast included · Shuttle stop at the door · Bar + lounge onsite · Jerry has stayed here twice — vouch for it completely</span></div>
+      </div>
+      <div class="feature-box" style="margin-bottom:20px">
+        <h3>The same world-class Hakuba experience</h3>
+        <p>Identical to Option 1 — 6-day Hakuba Valley Liftpass, full equipment rental, NYE in Echoland, New Year's Day onsen, 10 resorts, 11 metres of annual powder. The only difference is you arrive a week later.</p>
+        <div class="stats-row">
+          <div class="ski-stat"><div class="ski-stat-num">6</div><div class="ski-stat-lbl">Days on the slopes</div></div>
+          <div class="ski-stat"><div class="ski-stat-num">10</div><div class="ski-stat-lbl">Resorts on one pass</div></div>
+          <div class="ski-stat"><div class="ski-stat-num">11m</div><div class="ski-stat-lbl">Annual snowfall</div></div>
+        </div>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">28–30 Dec</span><span class="day-title">Shred Days</span></div>
+        <ul class="day-items">
+          <li>🎿 <strong>Happo-One</strong> — Japan's most famous resort. 13 lifts. Big mountain energy.</li>
+          <li>⛷️ <strong>Hakuba47 + Goryu</strong> — interconnected, terrain park, 37 runs combined</li>
+          <li>🏔️ <strong>Tsugaike Kogen</strong> — fewer crowds, powder fields off-piste</li>
+          <li>🍔 <strong>Burger King at the Tsugaike gondola mid-station</strong> — famously out of place, right on the mountain</li>
+          <li>♨️ <strong>Mimizuku Onsen</strong> evenings — wood-fired bath after a big day</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">31 Dec</span><span class="day-title">New Year's Eve in the Alps</span></div>
+        <ul class="day-items">
+          <li>Morning session — one last lap before the party starts</li>
+          <li><strong>NYE in Echoland</strong> — Hakuba's village hub goes absolutely off. Multiple bars and clubs, packed and buzzing.</li>
+          <li>Hakuba's massive Australian following makes NYE here feel like home — but better. Mountains, powder, your best mates.</li>
+          <li style="color:var(--ic-l)"><strong>There is no better place on earth to see in the New Year. Full stop.</strong></li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">1 Jan</span><span class="day-title">Happy New Year — Rest Day</span></div>
+        <ul class="day-items">
+          <li>Hatsumode — first shrine visit of the New Year, a moving Japanese tradition</li>
+          <li>Rest day. Mimizuku Onsen. The mountain will still be there.</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">2 Jan</span><span class="day-title">Final Shred</span></div>
+        <ul class="day-items">
+          <li>Last full day — back to Happo-One for a farewell lap</li>
+          <li>Return rental equipment. Final Echoland dinner.</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-header"><span class="day-num">3 Jan</span><span class="day-title">Homeward Bound</span></div>
+        <ul class="day-items">
+          <li>Check out Monkey Rider. Coach to Narita (~5.5 hours).</li>
+          <li>Last conveyor-belt sushi at Narita Terminal 3</li>
+          <li>JQ26 departs NRT 8:10pm · Arrives Cairns 4:35am · Home Gold Coast 12:00pm Mon 4 Jan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPTION 2: COSTS -->
+<div class="section">
+  <div class="section-title">What it costs — per person</div>
+  <table class="cost-table">
+    <thead>
+      <tr><th style="width:44px"></th><th>Item</th><th style="width:140px;text-align:right">Budget (AUD)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="item-icon">✈️</td><td><div class="item-name">Flights — same Jetstar OOL–Cairns–NRT return (24 Dec)</div><div class="item-note">Same routing, different departure date. Check jetstar.com for Christmas Eve availability.</div></td><td style="text-align:right"><div class="item-amt">~$2,200</div></td></tr>
+      <tr><td class="item-icon">🏨</td><td><div class="item-name">Accommodation — Tokyo Christmas (3 nights)</div><div class="item-note">9h Capsule Hotel Akasaka · ~$60pp/night · arrive 24 Dec, depart 27 Dec</div></td><td style="text-align:right"><div class="item-amt">~$180</div></td></tr>
+      <tr><td class="item-icon">⛷️</td><td><div class="item-name">Hakuba Package — 7 nights + lifts + gear</div><div class="item-note">Identical to Option 1 — Monkey Rider Lodge, 6-day valley liftpass, snowboard/ski rental. Book via MountainWatch.</div></td><td style="text-align:right"><div class="item-amt">~$2,000</div></td></tr>
+      <tr><td class="item-icon">🚅</td><td><div class="item-name">Shinkansen</div><div class="item-note">Not needed — Osaka leg removed entirely. Coach to Hakuba included in package.</div></td><td style="text-align:right"><div class="item-amt">$0</div></td></tr>
+      <tr><td class="item-icon">🛡️</td><td><div class="item-name">Travel insurance — FastCover Snow Sports Plus</div><div class="item-note">Same policy, shorter trip. ~$200pp for a 12-day Japan Snow Sports Plus policy. Ask MountainWatch when booking or go direct at fastcover.com.au. Must be 69 or under.</div></td><td style="text-align:right"><div class="item-amt">~$200</div></td></tr>
+      <tr><td class="item-icon">🍜</td><td><div class="item-name">Food — 11 days</div><div class="item-note">Same incredible, affordable Japanese food. ~$45/day.</div></td><td style="text-align:right"><div class="item-amt">~$495</div></td></tr>
+      <tr><td class="item-icon">🚇</td><td><div class="item-name">IC card + city transport</div><div class="item-note">Tokyo metro only (no Osaka). ~$100pp.</div></td><td style="text-align:right"><div class="item-amt">~$100</div></td></tr>
+      <tr><td class="item-icon">🎫</td><td><div class="item-name">Activities — Tokyo Christmas</div><div class="item-note">Disney, TeamLab, Mario Kart, Kewpie tour etc. Budget generously for Tokyo.</div></td><td style="text-align:right"><div class="item-amt">~$150</div></td></tr>
+      <tr><td class="item-icon">👜</td><td><div class="item-name">Shopping</div><div class="item-note">Harajuku, Akihabara, Shibuya 109, Hakuba village gear shops. Budget at your discretion.</div></td><td style="text-align:right"><div class="item-amt">¯\_(ツ)_/¯</div></td></tr>
+    </tbody>
+    <tfoot>
+      <tr class="cost-total"><td></td><td><div class="item-name">Total estimate per person</div><div class="item-note">Excl. shopping. Saves ~$1,230pp vs Option 1.</div></td><td style="text-align:right"><div class="item-amt">~$5,300</div></td></tr>
+    </tfoot>
+  </table>
+</div>
+
+<!-- OPTION 2: INSURANCE -->
+<div class="section">
+  <div class="section-title">Important — travel insurance</div>
+  <div class="insurance-box">
+    <div class="ins-icon">⚠️</div>
+    <div>
+      <div class="ins-title">Get FastCover's Snow Sports Plus policy — standard cover won't cut it</div>
+      <div class="ins-body">Standard travel insurance <strong>does not cover skiing or snowboarding</strong>. In Japan, a single ski injury can run $15,000+ AUD out of pocket. <strong>FastCover Snow Sports Plus</strong> is purpose-built for ski trips — covers recreational skiing and snowboarding, on-piste and off-piste, emergency mountain evacuation. Ask MountainWatch when booking, or go direct at <strong>fastcover.com.au</strong>. Budget <strong>~$200pp</strong> for the 12-day trip. Must be 69 or under.</div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOK NOW — Option 2 -->
+<div class="book-section" style="background:var(--bg-2);border-top:1px solid var(--border)">
+  <h2>Still a <span>yes?</span></h2>
+  <p>Same Hakuba trip. Same flights. Christmas in Tokyo instead of three weeks across Japan. Book the 24 Dec Jetstar flights and you're in.</p>
+  <a class="book-btn" href="https://www.jetstar.com" target="_blank">Check 24 Dec flights on Jetstar →</a>
+  <div class="book-ref" style="margin-top:16px">Then lock in Hakuba via <strong><a href="https://mountainwatch.travel/japan/hakuba/" target="_blank" style="color:var(--am-l);text-decoration:none">MountainWatch Travel</a></strong> · Insurance via <strong><a href="https://fastcover.com.au/travel-insurance-for-skiing-and-snowboarding" target="_blank" style="color:var(--am-l);text-decoration:none">FastCover Snow Sports Plus</a></strong></div>
+  <div class="book-ref" style="margin-top:12px;color:var(--text-3)">Questions? Ask Jerry. He's done this 5 times. Twice in Hakuba.</div>
+</div>
+
+    </div><!-- end option-body 2 -->
+  </div><!-- end option 2 -->
+
+</div><!-- end options-wrap -->
+
 <footer>
-  Japan · December 2026 – January 2027 · Prepared with love, from Jerry & Sara
+  Japan · December 2026 – January 2027 · Prepared with love, from Jerry &amp; Sara
 </footer>
 
 <script>
@@ -951,6 +1247,15 @@ function updateCountdown() {
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+function selectOption(id) {
+  ['option1','option2'].forEach(function(opt) {
+    var h = document.querySelector('#' + opt + ' > .option-header');
+    var b = document.querySelector('#' + opt + ' > .option-body');
+    if (opt === id) { h.classList.toggle('open'); b.classList.toggle('open'); }
+    else { h.classList.remove('open'); b.classList.remove('open'); }
+  });
+}
 
 function toggle(header) {
   header.classList.toggle('open');
